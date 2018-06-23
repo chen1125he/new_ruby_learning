@@ -1,0 +1,248 @@
+http://www.importnew.com/22083.html
+
+5.s1+1结果会是int，赋值给short会有问题
+	s1 += 1隐含一个强制转换
+6.没有goto但是是保留字
+7.基本类型有包装类型(引用类型)
+	Integer a = 3;
+	int b = 3;
+	a == b // true
+	Integer f1 = 100, f2 = 100, f3 = 150, f4 = 150;
+	如果 -128 <= Integer <= 127那么
+	f1 == f2 //true
+	f3 == f4 //false
+8.&&和&/|和||
+	&按位与
+	&&短路运算(炒鸡强大)
+	
+9.栈，堆，静态区
+	一个基本数据类型的变量、对象的引用还有函数调用的现在都使用栈空间;通过new关键字+构造器创建的对象放在堆空间;字面变量如直接书写的100，'hello'放在静态区
+	String str = new String("Hello");
+	str栈/new String()堆/"Hello"静态区
+10.Math.floor()向下取整
+	Math.round()四舍五入其实就是floor(num+0.5),负数也是+0.5
+	ceil()是不小于它的最小整数
+11.switch
+	java5(不包括)前只能是byte short char int
+	java5引入枚举
+	java7可以String
+12.用最有效率的方法计算2*8
+	2 << 3 => 2 * (2 ^ 3)
+	
+13.数组没有length()方法，有length属性
+	String有length()方法
+	
+14.跳出多重循环
+	OK:
+	for(...){
+		for(...){
+			if(..){
+				break OK;	//标记设置在循环体开头，跳出设置的循环体
+			}
+		}
+	}
+	
+15.构造器不能被继承，因而也不能被重写，但可以被重载
+	
+16.x.equals(y) == true那么他们的hash code应当相同(对象相同,hash_code相同)，hash_code相同，对象不一定相同
+17.String是final类，不能被继承
+18.java对象做参数是值传递，没有引用传递
+19.String是只读、StringBuilder和StringBuffer是相同的
+	String str1 = "this "+" is " + "string"  => String str1 = "this is string"两者是一样的 但如果把它们分成多个String对象相加就不一样了
+	String > StringBuffer > StringBuilder(单线程) (处理速度)
+	线程扩展 线程可以继承自Thread 或者接口Rubnnable(可以资源共享)
+	
+20.重写要求和父类有相同返回类型
+	不同的返回类型不能用来作为重载条件的原因是，不能唯一确定一个方法
+		比方说在单独调用一个fun()的时候，如果有两个fun() 一个返回int 一个返回void你不能确定这调用的是哪个方法
+21.	
+22.char 类型占2个字节，储存一个汉字是ok的
+23.抽象类不能实例化，但必须把方法都实现，除非子类也是抽象类
+24.静态方法中调用内部类会有错误
+	如果想要的话，可以先new 一个外部类的实例再去调用内部类new Outer().new Inner();
+25.java虽有垃圾回收机制，但也会存在存泄露
+	像Hibernate 中的Session ,会存在无用但可达的垃圾对象，需要及时关闭或者清空(close or flush)
+26.抽象的方法不能是静态的，因为静态的方法不能被重写
+27.静态变量是被static修饰的变量，也叫做类变量，不属于任何一个对象，静态变量只有一个拷贝
+	实例变量需要先创建对象才能访问到
+	
+28.静态方法只能访问静态成员，非静态方法有调用要先创建对象(成员方法应该也可以用类来调用类方法吧)
+	
+29.实现对象的克隆
+	现有的clone()会对对象关联的一些引用照搬，clonePerson.getCar().setBrand('new Brand')/原person里面car的也会改变
+	深度克隆要对象实现Serializable接口，通过序列化和反序列化实现克隆
+		ByteArrayOutputStream bout = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(bout);
+        oos.writeObject(obj);
+ 
+        ByteArrayInputStream bin = new ByteArrayInputStream(bout.toByteArray());
+        ObjectInputStream ois = new ObjectInputStream(bin);
+        return (T) ois.readObject();
+30.GC是垃圾手机的意思，可以防止内存泄露，有效地使用可以使用的内存
+31.String s = new String('xyz');
+	创建了两个对象 一个是静态区的'xyz'，一个是new 创建在堆上的对象
+32.接口可以继承接口，抽象类可以实现接口，接口可以继承具体类也可以继承抽象类
+33.一个.java源文件可以包含多个类，但只能有一个public类而且必须和文件名完全一致
+34.Anonymous Inner Class（匿名内部类）可以继承其他类或者实现其他接口
+35.一个内部类对象可以访问创建它的外部类对象的成员，包括私有成员
+36.final修饰类表示其不能被继承，修饰方法表示不能被重写，修饰变量表示其只能被赋值一次
+37.创建对象时候构造器的调用顺序是:先初始化静态成员，然后调用父类构造器，再初始化非静态成员，最后调用自身构造器
+	37的代码需要运行
+38.字符串转化为基本数据类型调用对应【包装类】中的方法parseXX(String)或者valueOf(String)
+	基本数据类型转字符串(String中的valueOf())或者与空串相连
+39.需要去敲代码
+40.怎样将GB2312编码的字符器转换为ISO-8859-1编码
+	String s = new String(str.getBytes("GB2312"), "ISO-8859-1")
+41.日期和时间
+	Calendar cal = Calendar.getInscance();
+	cal.get(Calendar.YEAR)
+	cal.get(Calendar.MONTH)
+	cal.get(Calendar.DATE)
+	cal.get(Calendar.HOUR_OF_DAY)
+	cal.get(Calendar.MINUTE)
+	cal.get(Calendar.SECOND)
+	
+	获取毫秒数Calendar.getInstance().getTimeInMillis();
+	cal.getActualMaximum(Clendar.DAY_OF_MONTH);
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+	sdf.format(new Date());
+	
+42.打印昨天的当前时刻
+	Clendar cal = Clendar.getInstance();
+	cal.add(Calendar.DATE, -1);
+	cal.getTime();
+43.java和javascript
+	java代码在执行前必须经过编译，js不需要经过编译，直接由浏览器解释执行
+	强类型变量和弱类型变量
+	
+44.断言？？
+45.Error和Exception
+	Error表示系统级的错误和程序不必处理的异常，恢复很困难的一种情况，如内存溢出，程序不可能处理这样的问题(递归公式和收敛条件)
+	Exception是可以捕捉到的异常，是可以处理的异常
+46.try{}里面return，而finally{}仍然会执行，在finally里面修改返回值是可以的，但这样。。。不好(龌龊)
+47.try里面包含可能有异常的代码块，catch可以声明多个捕捉不同类型的异常，finally是最后一定会执行的
+	throw是写在代码块里面，手动抛出的
+	throws出现在方法函数头，如果有制定的异常会直接抛出，由调用此函数的代码去处理
+48.运行时异常表示虚拟机的通常操作中可能遇到的异常，只要程序设计得没有问题就不会发生，受检异常跟程序运行的上下文环境有关，即使话程序设计无误，仍可能因使用的问题面引发
+49.常见的异常
+	ArithmeticException(算术异常)
+	ClassCastException(类转换异常)
+	IllegalArgumentException(非法参数异常)
+	IndexOutOfBoundsException(下标越界异常)
+	NullPointerException(空指针异常)
+	SecurityException(安全异常)
+50.final 修饰类，方法，属性
+	finally通常放在try{}catch{}后面表示最后一定要执行的代码块
+	finalize：Object类中定义的方法，是一个垃圾收集器，用来销毁对象用的
+51.略
+52.List Set是继承自Collection接口，Map不是
+	Set存储的零散的元素且不允许有重复元素，List是线性结构的窗口，适用于按数值索引访问
+53.ArrayList, Vector, LinkedList
+54.Collection是一个接口(Set List的父接口), Collections是一个工具类提供了一系列静态方法来窗口操作，包括对容器的搜索，排序和线程安全化
+55.List,以特定索引来存取值，可以重复。Set不能存放重复元素(equals()判断)。Map保存键值对(key-value pair)映射，映射关系可以是一对一或者多对一
+56.TreeSet方法要求存放的对象所属的类必须实现Comparable接口(实现conmareTo(),里面定义实现规则)，插入元素时会回调该方法，比较元素大小
+	Collections.sort(list, new Comparator<Student>(){
+		public int conpare(Student s1, Student s2){
+			return s1.getName.conpareTo(s2.getName());
+		}
+	});
+57.
+...
+70.读取文件
+	try(FileReader fr = new FileReader(filename)){
+		try(BufferReader br = new BufferReader(fr)){
+			while((line = br.readLine()) != null)
+		}
+	}catch(Exception ex){
+		
+	}
+71.列举文件夹下面所有的文件
+	File f = new File("/Users/Hao/DownLoads");
+	for(File temp : f.listFiles()){
+		if(temp.isFile()){
+			syso(temp.getName());
+		}
+	}
+72.
+...
+75.
+public Class DBHelper{
+	public Connection conn = null;
+	public preparedStatement pst = null;
+	public DBHelper(String sql){
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:musql://127.0.0.1/student", user, password)
+			pst = conn.prepareStatement(sql)
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	public void close(){
+		try{
+			this.conn.close();
+			this.pst.clost();
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+	}
+}
+	dbh = new DBHelper(sql);
+	ResultSet rs = dbh.pst.executeQuery();
+	rs.getInt("id")/getInt(1)
+76.Pst接口代表预编译的语句，可以减少sql的编译错误，并增加sql安全性(减少sql注射攻击的可能);可以附带参数避免了拼接的麻烦和不安全;批量处理sql或者频繁执行相同的查询时，可以明显提升性能
+
+77.jdbc提升读取性能 ResultSet对象的setFetchSize()方法指定抓取的记录数(空间换取时间)
+	提升更新性能PrepareStatement构建批处理
+78.连接池的作用：创建连接和释放连接都需要很大的开销(尤其数据库不在本地时，建立连接需要tcp三次握手，释放连接需要tcp四次握手)
+	所以为了提升性能需要建立一些链接池，需要时从连接池获取然后归还不关闭
+		java开源数据库连接池有C3P0\Proxool\DBCP\BoneCP\Druid
+79.DAO(Data Access Object)
+
+80.事务的ACID指的是
+	Atomic(原子性):同时实现，一个失败全部失败
+	Consistent(一致性):事务结束后系统状态是一致的
+	Isolated(隔离性):并发执行的事务彼此无法看到对方的中间状态
+	Durable(持久性):事务完成后所做的所有改动都会被持久化，即使发生问题
+	
+	脏读：A事务读取B事务尚未提交的数据
+81.jdbc事务
+	try{
+		conn.setAutoCommit(false)
+		...
+		conn.commit()
+	}catch(SQLException e){
+		..
+		conn.rollback();
+	}finally{
+		conn.setAutoCommit(true);
+	}
+82..
+83.正则表达式用途
+	需要匹配具有某些规则的字符串，正则表达式就是用来描述这些规则的
+84.matches()、replaceAll()、replaceFirst()、slip()
+	Pattern p = Pattern.compile(".*?(?=\\()")
+	
+85.获得一个类的类对象
+	.class 例如String.class
+	.getClass() 例如 "hanhan".getClass()
+	Class.forName() 例如 Class.forName("java.lang.String")
+...
+89.面向对象的六原则一法则
+	单一职责原则：一个类只做它应该做的事情，即高内聚，因为专注所以专业嘛
+	开放原则：软件实体应该对扩展开放，对修改关闭
+	接口隔离原则：接口要小而专，不能大而全
+	迪米特法则：最少知识原则，一个对象应该对其他对象有尽可能少的了解，低耦合。
+..
+91.单例方法
+	将构造器私有，不允许外界通过构造器创建对象，通过公开的静态方法，返回类的唯一实例
+	public class Singleton{
+		private Singleton(){}
+		private static Singleton instance = new Singleton();
+		public static Singleton getInstance(){
+			return instance;
+		}
+	}
+92.UML
+	统一建模语言
