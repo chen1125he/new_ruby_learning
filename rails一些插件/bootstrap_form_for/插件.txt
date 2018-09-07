@@ -1,0 +1,2 @@
+1.f.form_group :name, label: {text: ‘xx’} do
+就可以显示出name为 name的error了

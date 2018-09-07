@@ -1,0 +1,12 @@
+1.$selector.tooltip({
+  animated: 'fade',
+      placement: 'right',
+      html: true,
+      template: '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner tooltip-inner-picture"></div></div>’,
+  delay: { “show”: 100, “hide”: 200}
+})
+
+用了html之后可以放html代码
+
+弹窗的dom节点就在selector下面一点点，如果出现首次弹窗位置不对，不能自适应的话可能是样式设置不对
+设置一下delay就可以选中弹窗并设置delay了

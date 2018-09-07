@@ -1,23 +1,23 @@
-0.rubymineÌí¼Ósdk: file => Settings => ËÑË÷sdk
-1.	StringÀàÖĞµÄ[]»òsliceÈ¡stringÖĞµÄÒ»²¿·Ö) È¡µÄÖµÊÇ[a,b)ÁíÍâÈç¹û²»µ½bÔò¾ÍÈ¡µ½ËùÓĞ³¤¶È,Èç¹û²ÎÊıÊÇ(3..6)¾ÍÊÇ[4,7]
-2.	<<ºÍpush·½·¨¶¼ÊÇ½«Ò»¸ö¶ÔÏó·Åµ½Êı×éÖĞ£¬°üÀ¨Êı×é¶ÔÏó
-3.	×ö²å¼şµÄµÇ³ö²Ù×÷Ê±£¬²»ÊÇÓÃ@user_session.destroyÔÚÊı¾İ¿âÀï×öÉ¾³ı£¬¶øÊÇÇå³ısession£¬ÓÃcurrent_user_session.destroy
-4.	µ±×öÄ³Ğ©²Ù×÷£¨±£´æ¸üĞÂÖ®Àà£©Ê§°ÜÓÃrenderÊ±£¬Ö»Òªrender  ¡®page¡¯
-¶ø²»ÓÃÏñhtmlÀïÃæÒ»ÑùÓÃrender :partial => ¡®page¡¯ ÉµÉµµÄ
-5.	numericality: {only_integer: true, message: 'ÄêÁä±ØĞëÎªÕûÊı'}
-only_integerÖ»ÊÇnumericalityµÄÒ»¸öÊôĞÔ²»ÄÜÏñnumericatyÒ»Ñùµ¥¶ÀÊ¹ÓÃ
+0.rubymineæ·»åŠ sdk: file => Settings => æœç´¢sdk
+1.	Stringç±»ä¸­çš„[]æˆ–sliceå–stringä¸­çš„ä¸€éƒ¨åˆ†) å–çš„å€¼æ˜¯[a,b)å¦å¤–å¦‚æœä¸åˆ°båˆ™å°±å–åˆ°æ‰€æœ‰é•¿åº¦,å¦‚æœå‚æ•°æ˜¯(3..6)å°±æ˜¯[4,7]
+2.	<<å’Œpushæ–¹æ³•éƒ½æ˜¯å°†ä¸€ä¸ªå¯¹è±¡æ”¾åˆ°æ•°ç»„ä¸­ï¼ŒåŒ…æ‹¬æ•°ç»„å¯¹è±¡
+3.	åšæ’ä»¶çš„ç™»å‡ºæ“ä½œæ—¶ï¼Œä¸æ˜¯ç”¨@user_session.destroyåœ¨æ•°æ®åº“é‡Œåšåˆ é™¤ï¼Œè€Œæ˜¯æ¸…é™¤sessionï¼Œç”¨current_user_session.destroy
+4.	å½“åšæŸäº›æ“ä½œï¼ˆä¿å­˜æ›´æ–°ä¹‹ç±»ï¼‰å¤±è´¥ç”¨renderæ—¶ï¼Œåªè¦render  â€˜pageâ€™
+è€Œä¸ç”¨åƒhtmlé‡Œé¢ä¸€æ ·ç”¨render :partial => â€˜pageâ€™ å‚»å‚»çš„
+5.	numericality: {only_integer: true, message: 'å¹´é¾„å¿…é¡»ä¸ºæ•´æ•°'}
+only_integeråªæ˜¯numericalityçš„ä¸€ä¸ªå±æ€§ä¸èƒ½åƒnumericatyä¸€æ ·å•ç‹¬ä½¿ç”¨
 6.	select("post", "person_id", Person.all.collect {|p| [ p.name, p.id ] }, { include_blank: true })
-7.	ÓĞµÄÖµÖ»ÄÜÔÚÒ»¸öÒ³ÃæÊ¹ÓÃ£¬¶ø¶ÔÓÚÍ¬ÑùÏëÊ¹ÓÃµÄÍ¬Ò»¸ö¿ò¼Ü¼¯µÄÒ³ÃæÒ²ÏëÓÃ¿ÉÒÔÓÃcontent_for
-Content_for: questions_count do 
+7.	æœ‰çš„å€¼åªèƒ½åœ¨ä¸€ä¸ªé¡µé¢ä½¿ç”¨ï¼Œè€Œå¯¹äºåŒæ ·æƒ³ä½¿ç”¨çš„åŒä¸€ä¸ªæ¡†æ¶é›†çš„é¡µé¢ä¹Ÿæƒ³ç”¨å¯ä»¥ç”¨content_for
+Content_for: questions_count do
 	@question.length if @question
 	0 unless @question
-End 
-µ÷ÓÃÊ±ÓÃ yield :question_count
-	8£®	  ÔÊĞíÑéÖ¤Îª¿ÕÓÃÊôĞÔallow_blank
-	9.	  Êı¾İ¿â»Ø¹ö£¬¶ÔÏó²»»Ø¹ö¡£
-	9.	  model.send(name)¸ù¾İ×Ö·û´®µÄ×Ö¶ÎÃû»ñÈ¡Ä£ĞÍµÄÖµ
-	11.	  ÔÚArrayÀïÃæÓĞ¸öcollect·½·¨£¬¿ÉÒÔÓÃ¿é¶ÔÆä±¾ÉíµÄÖµ×ö³ö¸Ä±äÉú³ÉÒ»¸öĞÂµÄArray
-	12.	  Í¼Æ¬ÉÏ´«Ô¤ÀÀ
+End
+è°ƒç”¨æ—¶ç”¨ yield :question_count
+	8ï¼	  å…è®¸éªŒè¯ä¸ºç©ºç”¨å±æ€§allow_blank
+	9.	  æ•°æ®åº“å›æ»šï¼Œå¯¹è±¡ä¸å›æ»šã€‚
+	9.	  model.send(name)æ ¹æ®å­—ç¬¦ä¸²çš„å­—æ®µåè·å–æ¨¡å‹çš„å€¼
+	11.	  åœ¨Arrayé‡Œé¢æœ‰ä¸ªcollectæ–¹æ³•ï¼Œå¯ä»¥ç”¨å—å¯¹å…¶æœ¬èº«çš„å€¼åšå‡ºæ”¹å˜ç”Ÿæˆä¸€ä¸ªæ–°çš„Array
+	12.	  å›¾ç‰‡ä¸Šä¼ é¢„è§ˆ
 		function preview(file)
     {
         var prevDiv = document.getElementById('preview');
@@ -35,193 +35,193 @@ End
             prevDiv.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';
         }
 }
-13.ApplicationController.helpers.options_for_select(products)¿ÉÒÔ°ÑÊı×é×ª»¯³Éoption
-14 <%=select_tag 'product[brand_id]',options_from_collection_for_select(@brands, "id", "name", @product.brand_id)%>Ä¬ÈÏÑ¡ÖĞµÄselect_tag
-15find()ArrayºÍwhere():ActiveRecord_Relation·µ»ØµÄ½á¹ûÀàĞÍ²»Í¬£¬@xxxsµÄÀàĞÍ²»²»Í¬paginateÒªÓÃµÄÊÇ:ActiveRecord_RelationÀàĞÍµÄÕâ»á³öÏÖundefined method `total_pages'
-PaginateÓëµÈºÅÓĞ¿Õ¸ñÒ²»á³öÏÖ
+13.ApplicationController.helpers.options_for_select(products)å¯ä»¥æŠŠæ•°ç»„è½¬åŒ–æˆoption
+14 <%=select_tag 'product[brand_id]',options_from_collection_for_select(@brands, "id", "name", @product.brand_id)%>é»˜è®¤é€‰ä¸­çš„select_tag
+15find()Arrayå’Œwhere():ActiveRecord_Relationè¿”å›çš„ç»“æœç±»å‹ä¸åŒï¼Œ@xxxsçš„ç±»å‹ä¸ä¸åŒpaginateè¦ç”¨çš„æ˜¯:ActiveRecord_Relationç±»å‹çš„è¿™ä¼šå‡ºç°undefined method `total_pages'
+Paginateä¸ç­‰å·æœ‰ç©ºæ ¼ä¹Ÿä¼šå‡ºç°
 
-16.ÔİÇÒÏÈÈÏÎªbefore_actionºÍbefore_filterÊÇÒ»¸öÒâË¼£¬Í¬Ò»¸öcontroller³öÏÖ¶à¸öÊ±ËûÃÇÊÇÓĞÖ´ĞĞµÄÏÈºóË³ĞòµÄ
+16.æš‚ä¸”å…ˆè®¤ä¸ºbefore_actionå’Œbefore_filteræ˜¯ä¸€ä¸ªæ„æ€ï¼ŒåŒä¸€ä¸ªcontrollerå‡ºç°å¤šä¸ªæ—¶ä»–ä»¬æ˜¯æœ‰æ‰§è¡Œçš„å…ˆåé¡ºåºçš„
 before_action :login_filter
   before_action :set_user_message, only: [:edit, :update]
-17.±íµ¥Ìá½»ÊÂ¼ş<form  ¡­  onsubmit=¡¯return true/false>
-18.±êÇ©Ç¶Ì×²»µ±ËÆºõ»áÔì³É°´Å¥µÄÊ§Ğ§£¿form±êÇ©Ó¦µ±ÔÚtableµÄÍâÃæ
-19. raise ActiveRecord::RollbackÊÇÈÃtransactionºóÃæµÄ´úÂë¶¼²»Ö´ĞĞ¶ø²»ÊÇÕû¸öºóÃæµÄ´úÂë¶¼²»Ö´ĞĞ
-20.¹ØÓÚflashµÄÌáÊ¾ÏûÏ¢²»ÏûÊ§£¬»ù±¾¶¼ÊÇ³öÏÖÔÚrenderÖĞ£¬flashµÄÉúÃüÖÜÆÚÔÚÒ»´ÎÌø×ª(redirect)Ö®¼ä£¬¶ørender²»Ëã£¬ËùÒÔÔÚÏÂÒ»´ÎÌø×ªÖ®Ç°flashÖĞµÄÄÚÈİÈÎÈ»´æÔÚ£¬ÕâÊ±ºò¾ÍÓÃflash.now
-21.ÉèÖÃ¹ØÁªÅÅĞò
+17.è¡¨å•æäº¤äº‹ä»¶<form  â€¦  onsubmit=â€™return true/false>
+18.æ ‡ç­¾åµŒå¥—ä¸å½“ä¼¼ä¹ä¼šé€ æˆæŒ‰é’®çš„å¤±æ•ˆï¼Ÿformæ ‡ç­¾åº”å½“åœ¨tableçš„å¤–é¢
+19. raise ActiveRecord::Rollbackæ˜¯è®©transactionåé¢çš„ä»£ç éƒ½ä¸æ‰§è¡Œè€Œä¸æ˜¯æ•´ä¸ªåé¢çš„ä»£ç éƒ½ä¸æ‰§è¡Œ
+20.å…³äºflashçš„æç¤ºæ¶ˆæ¯ä¸æ¶ˆå¤±ï¼ŒåŸºæœ¬éƒ½æ˜¯å‡ºç°åœ¨renderä¸­ï¼Œflashçš„ç”Ÿå‘½å‘¨æœŸåœ¨ä¸€æ¬¡è·³è½¬(redirect)ä¹‹é—´ï¼Œè€Œrenderä¸ç®—ï¼Œæ‰€ä»¥åœ¨ä¸‹ä¸€æ¬¡è·³è½¬ä¹‹å‰flashä¸­çš„å†…å®¹ä»»ç„¶å­˜åœ¨ï¼Œè¿™æ—¶å€™å°±ç”¨flash.now
+21.è®¾ç½®å…³è”æ’åº
 		has_many :pictures,->{order(:src => :desc)}, as: :owner, :dependent => :delete_all
-22.rails¶ÔhtmlÓĞÒİ³ö£¬¼´ÈÎºÎhtmlÊä³öÈç<%= ¡®<input />¡¯%>»á±ä³É&lt;input /&gt;
-		Èç¹ûÍêÈ«ÔÊĞí£¬¿ÉÒÔ<%=raw ¡®<input />¡¯%>»áÊä³ö³É<input />(»òÕßÓÃhtml.html_safe)
-		»òÕßÌí¼Ó°×Ãûµ¥ÓÃsanitize 
+22.railså¯¹htmlæœ‰é€¸å‡ºï¼Œå³ä»»ä½•htmlè¾“å‡ºå¦‚<%= â€˜<input />â€™%>ä¼šå˜æˆ&lt;input /&gt;
+		å¦‚æœå®Œå…¨å…è®¸ï¼Œå¯ä»¥<%=raw â€˜<input />â€™%>ä¼šè¾“å‡ºæˆ<input />(æˆ–è€…ç”¨html.html_safe)
+		æˆ–è€…æ·»åŠ ç™½åå•ç”¨sanitize
 		https://ihower.tw/rails4/actionview-helpers.html
-23.***_ before_type_cast¿ÉÒÔ°ÑÊı¾İ×ª»»³ÉËüÎ´×ª»»Ö®Ç°µÄÑù×Ó£¬±È·½ËµÄ³±íµ¥Êı¾İ002»á±»¸³Öµ¸øÊı×ÖÀàĞÍ±ä³É2£¬ÓÃÕâ¸ö·½·¨¿ÉÒÔ±ä³É002
-	railsµÄform_forÔÚ»ØÏÔµÄÊ±ºò£¬ÏÔÊ¾µÄÓ¦¸Ã¾ÍÊÇÕâ¸ö
-24.skip_before_action/filter ¿ÉÒÔÌø¹ıÔÚcontroller¸¸ÀàÖĞ¶¨ÒåµÄbefore_action£¬ÈÃÄ³¸öbefore_actionµÄ·½·¨²»Ö´ĞĞ£¬±ÈÈçÔÚuser_sessionÖĞµÄnewºÍcreate¾Í²»ÄÜÓÃbefore_action¾ÍÓÃskip_before_acrion :login_filter, except: [:destroy]Ìø¹ı
-25.defined?(value)ÖĞµÄdefined?ÊÇÒ»¸öÔËËã·ûºÅ»á·µ»ØvalueµÄÀàĞÍÃû(method/local-variableµÈ)£¿»òÕßnil
-26.@model.try(:method).try(:method2),¿ÉÒÔ±ÜÃâmethod/method2 undefied for nilClass
-µ±²»´æÔÚ»á·µ»Ø¿ÕÖµ
-27. map¿ÉÒÔ±éÀúhashµÄÂï£¬ÔõÃ´Íü¼ÇÁË
-28.ArrayµÄsort·½·¨
+23.***_ before_type_castå¯ä»¥æŠŠæ•°æ®è½¬æ¢æˆå®ƒæœªè½¬æ¢ä¹‹å‰çš„æ ·å­ï¼Œæ¯”æ–¹è¯´æŸè¡¨å•æ•°æ®002ä¼šè¢«èµ‹å€¼ç»™æ•°å­—ç±»å‹å˜æˆ2ï¼Œç”¨è¿™ä¸ªæ–¹æ³•å¯ä»¥å˜æˆ002
+	railsçš„form_foråœ¨å›æ˜¾çš„æ—¶å€™ï¼Œæ˜¾ç¤ºçš„åº”è¯¥å°±æ˜¯è¿™ä¸ª
+24.skip_before_action/filter å¯ä»¥è·³è¿‡åœ¨controllerçˆ¶ç±»ä¸­å®šä¹‰çš„before_actionï¼Œè®©æŸä¸ªbefore_actionçš„æ–¹æ³•ä¸æ‰§è¡Œï¼Œæ¯”å¦‚åœ¨user_sessionä¸­çš„newå’Œcreateå°±ä¸èƒ½ç”¨before_actionå°±ç”¨skip_before_acrion :login_filter, except: [:destroy]è·³è¿‡
+25.defined?(value)ä¸­çš„defined?æ˜¯ä¸€ä¸ªè¿ç®—ç¬¦å·ä¼šè¿”å›valueçš„ç±»å‹å(method/local-variableç­‰)ï¼Ÿæˆ–è€…nil
+26.@model.try(:method).try(:method2),å¯ä»¥é¿å…method/method2 undefied for nilClass
+å½“ä¸å­˜åœ¨ä¼šè¿”å›ç©ºå€¼
+27. mapå¯ä»¥éå†hashçš„å˜›ï¼Œæ€ä¹ˆå¿˜è®°äº†
+28.Arrayçš„sortæ–¹æ³•
 msg_arr = msg_arr.sort do |key_a, key_b|
         value_a = hash_field_orders[key_a[0].to_sym].blank? ? max : hash_field_orders[key_a[0].to_sym]
         value_b = hash_field_orders[key_b[0].to_sym].blank? ? max : hash_field_orders[key_b[0].to_sym]
         value_a <=> value_b
       end
-29.gsub·½·¨¿ÉÒÔ´«¸ö¿é"hello".gsub(/./) {|s| s.ord.to_s + ' '}
-	30.redirect_to Hash (action: :index/¡¯action¡¯ => ¡®index¡¯/:adtion => ¡®index¡¯)
+29.gsubæ–¹æ³•å¯ä»¥ä¼ ä¸ªå—"hello".gsub(/./) {|s| s.ord.to_s + ' '}
+	30.redirect_to Hash (action: :index/â€™actionâ€™ => â€˜indexâ€™/:adtion => â€˜indexâ€™)
 31.request.remote_ip
-32.ÓĞÒ»¸önumber_with_xµÄhelper·½·¨
-33.render layout: ¡®layout¡¯/false (falseÊÇÈ¡Ïû²¼¾Ö)
-34.Í¨³£»á°ÑjsÎÄ¼şĞ´ÔÚÎÄ¼şÏÂ±ß£¬cssĞ´ÔÚÎÄ¼şÉÏ±ß£¬ÕâÑù²»»áµ¼ÖÂÎÄ¼ş¼ÓÔØÊ±¼ä¹ı³¤ÍøÒ³ÎŞ·¨ÏÔÊ¾µÄÎÊÌâ
-35.render partial: ¡®products¡¯, locals: {product: product}(,:object => @products,²»½¨ÒéÕâÃ´ÓÃ»áµ¼ÖÂ¾Ö²¿Ä£°åÓë¸¸Ä£°åñîºÏ£¬ÖØÓÃĞÔ½µµÍ)
+32.æœ‰ä¸€ä¸ªnumber_with_xçš„helperæ–¹æ³•
+33.render layout: â€˜layoutâ€™/false (falseæ˜¯å–æ¶ˆå¸ƒå±€)
+34.é€šå¸¸ä¼šæŠŠjsæ–‡ä»¶å†™åœ¨æ–‡ä»¶ä¸‹è¾¹ï¼Œcsså†™åœ¨æ–‡ä»¶ä¸Šè¾¹ï¼Œè¿™æ ·ä¸ä¼šå¯¼è‡´æ–‡ä»¶åŠ è½½æ—¶é—´è¿‡é•¿ç½‘é¡µæ— æ³•æ˜¾ç¤ºçš„é—®é¢˜
+35.render partial: â€˜productsâ€™, locals: {product: product}(,:object => @products,ä¸å»ºè®®è¿™ä¹ˆç”¨ä¼šå¯¼è‡´å±€éƒ¨æ¨¡æ¿ä¸çˆ¶æ¨¡æ¿è€¦åˆï¼Œé‡ç”¨æ€§é™ä½)
 	<%= render :partial => @customer %>
-#Ïàµ±ÓÚ
+#ç›¸å½“äº
 <%= render :partial => "customer", :object=>@customer %>
-	Render :file => ¡®404.html¡¯, layout: false/true, status: 404 ¿ÉÒÔÕâÑùÓÃ
+	Render :file => â€˜404.htmlâ€™, layout: false/true, status: 404 å¯ä»¥è¿™æ ·ç”¨
 36.form_for :model, url: this_is_url, method: :post
-37.ÉèÖÃ°´Å¥µÄ data: {:¡¯disable_with¡¯ => ¡®ÇëÉÔµÈ¡­¡¯}¿ÉÒÔ±ÜÃâÌá½»°´Å¥±»ÖØ¸´µã»÷,¿ÉÒÔÔÚactionÖĞ¼Ó¸ösleep 3ÈÃËüÍ£¶Ù3Ãë
-38.=~Æ¥ÅäµÄÊÇÎ»ÖÃÒÔ0¿ªÊ¼£¬·µ»ØµÚÒ»´ÎÆ¥ÅäµÄÎ»ÖÃ
-	Match·µ»ØÒ»¸ömatchdataÀà
-39.window.location = window.location¼´ÖØÔØµ±Ç°Ò³Ãæ£¬Ò²¾ÍÊÇË¢ĞÂµ±Ç°Ò³Ãæ£¬¶ÔsessionÊ§Ğ§ÓĞÓÃ£¬Ê¹ÓÃajax²Ù×÷
-40.where²éÑ¯ÀïÃæ²»Òª°ÑhashĞ´ÔÚ[]ÀïÃæÏñÕâÑù["code" => custom_column_code, "event_id" => self.event_id, "type" => 2]ÕâÑù»áÓĞ´íÎóµ«²»»á±¨´íºÃÏñ
+37.è®¾ç½®æŒ‰é’®çš„ data: {:â€™disable_withâ€™ => â€˜è¯·ç¨ç­‰â€¦â€™}å¯ä»¥é¿å…æäº¤æŒ‰é’®è¢«é‡å¤ç‚¹å‡»,å¯ä»¥åœ¨actionä¸­åŠ ä¸ªsleep 3è®©å®ƒåœé¡¿3ç§’
+38.=~åŒ¹é…çš„æ˜¯ä½ç½®ä»¥0å¼€å§‹ï¼Œè¿”å›ç¬¬ä¸€æ¬¡åŒ¹é…çš„ä½ç½®
+	Matchè¿”å›ä¸€ä¸ªmatchdataç±»
+39.window.location = window.locationå³é‡è½½å½“å‰é¡µé¢ï¼Œä¹Ÿå°±æ˜¯åˆ·æ–°å½“å‰é¡µé¢ï¼Œå¯¹sessionå¤±æ•ˆæœ‰ç”¨ï¼Œä½¿ç”¨ajaxæ“ä½œ
+40.whereæŸ¥è¯¢é‡Œé¢ä¸è¦æŠŠhashå†™åœ¨[]é‡Œé¢åƒè¿™æ ·["code" => custom_column_code, "event_id" => self.event_id, "type" => 2]è¿™æ ·ä¼šæœ‰é”™è¯¯ä½†ä¸ä¼šæŠ¥é”™å¥½åƒ
 
-41.ime-mode: disable¿ÉÒÔ½ûÖ¹±íµ¥ÊäÈëÖĞÎÄ£¬È«½ÇµÈ£¬ÊäÈë·¨¶¼ÇĞ»»²»ÁËÈ«½Ç
+41.ime-mode: disableå¯ä»¥ç¦æ­¢è¡¨å•è¾“å…¥ä¸­æ–‡ï¼Œå…¨è§’ç­‰ï¼Œè¾“å…¥æ³•éƒ½åˆ‡æ¢ä¸äº†å…¨è§’
 
-42.form ÀïÃæ¼ÓÁËdata-remote,¼´form_tagÀïÃæÓĞremote : trueÊ±Õâ¸ö±íµ¥¾ÍÊÇajaxÇëÇó£¬Ëü²»»áÌø×ªÒ³Ãæ£¬ÕâÊ±¿ÉÒÔ½øÈëÌø×ªµ½µÄactionµÄjs.erbÎÄ¼şÖĞÖ´ĞĞjs´úÂë£¬ÏñÊÓÍ¼Ò»Ñù£¬×Ô¶¯½øÈë???Èç¹û³öÏÖÁËInvalidAuthenticityTokenÊ±£¬¼Óauthenticity_token: true,²»¹ıÎÊÌâºÃÏñÓÖ²»ÔÚÕâÀï£¬ÒòÎª¼´Ê¹ÕâÑù×öÁË£¬ËüÇëÇóµÄÒÀÈ»ÊÇhtml£¬¼´»áÔì³ÉÒ³ÃæµÄÌø×ª£¬²»ÊÇajaxÇëÇó£¬ÕâÊ±ÔÚapplication.jsÖĞĞ´ÉÏ
+42.form é‡Œé¢åŠ äº†data-remote,å³form_tagé‡Œé¢æœ‰remote : trueæ—¶è¿™ä¸ªè¡¨å•å°±æ˜¯ajaxè¯·æ±‚ï¼Œå®ƒä¸ä¼šè·³è½¬é¡µé¢ï¼Œè¿™æ—¶å¯ä»¥è¿›å…¥è·³è½¬åˆ°çš„actionçš„js.erbæ–‡ä»¶ä¸­æ‰§è¡Œjsä»£ç ï¼Œåƒè§†å›¾ä¸€æ ·ï¼Œè‡ªåŠ¨è¿›å…¥???å¦‚æœå‡ºç°äº†InvalidAuthenticityTokenæ—¶ï¼ŒåŠ authenticity_token: true,ä¸è¿‡é—®é¢˜å¥½åƒåˆä¸åœ¨è¿™é‡Œï¼Œå› ä¸ºå³ä½¿è¿™æ ·åšäº†ï¼Œå®ƒè¯·æ±‚çš„ä¾ç„¶æ˜¯htmlï¼Œå³ä¼šé€ æˆé¡µé¢çš„è·³è½¬ï¼Œä¸æ˜¯ajaxè¯·æ±‚ï¼Œè¿™æ—¶åœ¨application.jsä¸­å†™ä¸Š
 //= require jquery
 //= require jquery_ujs
-²ÅĞĞ£¬ÎÒµÄ´íÎóºÃÏñÊÇ³öÏÖÔÚ»¹Ğ´ÁËrequire jquery.min
-43.send_fileÏòÒ³Ãæ·¢ËÍÎÄ¼ş,Ó¦¸ÃÊÇÀàËÆÓÚrenderµÄ¶«Î÷£¬renderµ±Ç°Ò³Ãæ£¬È»ºó·¢ËÍÎÄ¼ş
-   send_data·¢ËÍÊı¾İµÄÊ±ºò»á°ÑÊı¾İËø×¡£¬Èç¹ûÏë·¢ËÍÍê¾ÍÉ¾³ıµÄ»°£¬ÓÃsend_data×îºÃÁË£¬»áÔÚ·¢ËÍÍê²ÅÉ¾³ı
-Send_file(¡®file_path¡¯, filename: ¡®filename¡¯)
-44.renderÒ»¸öactionÏñÊÇrenderËüµÄÄ£°å£¬²¢²»»áÈ¥×ßËüÀïÃæµÄ·½·¨
-45. src=('|"|)(.+\.(jpg|png|gif))(\1)  ·Ö×é1ÖĞµÄÒâË¼Îª µ¥ÒıºÅ¡¢Ë«ÒıºÅ»òÕß¿Õ£¨»òÕß¿Õ³¬°ôµÄ£©
-46.railsÀïÃæjson²»ÓÃ×ª»»£¬ÒÑ¾­Ö±½Ó³ÉhashµÄÑù×ÓÁË£¨²»ÓÃeval£©¿ÉÒÔÓÃdata[key]
-Ò²¿ÉÒÔÓÃ$.each(data, function(key, value){
-	È¥±éÀú
+æ‰è¡Œï¼Œæˆ‘çš„é”™è¯¯å¥½åƒæ˜¯å‡ºç°åœ¨è¿˜å†™äº†require jquery.min
+43.send_fileå‘é¡µé¢å‘é€æ–‡ä»¶,åº”è¯¥æ˜¯ç±»ä¼¼äºrenderçš„ä¸œè¥¿ï¼Œrenderå½“å‰é¡µé¢ï¼Œç„¶åå‘é€æ–‡ä»¶
+   send_dataå‘é€æ•°æ®çš„æ—¶å€™ä¼šæŠŠæ•°æ®é”ä½ï¼Œå¦‚æœæƒ³å‘é€å®Œå°±åˆ é™¤çš„è¯ï¼Œç”¨send_dataæœ€å¥½äº†ï¼Œä¼šåœ¨å‘é€å®Œæ‰åˆ é™¤
+Send_file(â€˜file_pathâ€™, filename: â€˜filenameâ€™)
+44.renderä¸€ä¸ªactionåƒæ˜¯renderå®ƒçš„æ¨¡æ¿ï¼Œå¹¶ä¸ä¼šå»èµ°å®ƒé‡Œé¢çš„æ–¹æ³•
+45. src=('|"|)(.+\.(jpg|png|gif))(\1)  åˆ†ç»„1ä¸­çš„æ„æ€ä¸º å•å¼•å·ã€åŒå¼•å·æˆ–è€…ç©ºï¼ˆæˆ–è€…ç©ºè¶…æ£’çš„ï¼‰
+46.railsé‡Œé¢jsonä¸ç”¨è½¬æ¢ï¼Œå·²ç»ç›´æ¥æˆhashçš„æ ·å­äº†ï¼ˆä¸ç”¨evalï¼‰å¯ä»¥ç”¨data[key]
+ä¹Ÿå¯ä»¥ç”¨$.each(data, function(key, value){
+	å»éå†
 })
 47.respond_to do |format|
-	#format.js¾ÍÊÇrender js: ²»¿ÉÒÔrender  json
-	#¶øÇÒÕâºÍajaxµÄ dataTypeÊÇÏà¶ÔÓ¦£¬·ñÔòÏìÓ¦Ê§°Ü
-	#ÁíÍâ£¬¼´Ê¹ÊÇjs£¬successµÄfunction(data)ÖĞµÄdataÒ²ÓĞÖµ£¬¼´renderµÄjs,ÊÇ×Ö·û´®ÀàĞÍ
+	#format.jså°±æ˜¯render js: ä¸å¯ä»¥render  json
+	#è€Œä¸”è¿™å’Œajaxçš„ dataTypeæ˜¯ç›¸å¯¹åº”ï¼Œå¦åˆ™å“åº”å¤±è´¥
+	#å¦å¤–ï¼Œå³ä½¿æ˜¯jsï¼Œsuccessçš„function(data)ä¸­çš„dataä¹Ÿæœ‰å€¼ï¼Œå³renderçš„js,æ˜¯å­—ç¬¦ä¸²ç±»å‹
  End
-48.File.joinÊÇ¼ÓÒ»²ãÂ·¾¶ÈçFile.join(¡®c:/file¡¯, ¡®file_path¡¯) => ¡®c:/file/file_path¡¯
-49.railsÊÖ¶¯ÉèÖÃÑÓ³Ùsleep(5s)
-50.ÔÚÓÃjsÀïÃæ»áÓĞ¸öÆæ¹ÖµÄÏÖÏó£¬±¾À´ÓÃÀ´ÓÃÀ´ÏÔÊ¾ºÚÆÁµÄloadding·ÅÔÚajaxÁ½±ß¾¹È»Ã»ÓĞĞ§¹û£¬¶ø·ÅÔÚajaxÀïÃæ²ÅÓĞÓÃ£¬ÎªÊ²Ã´ÄØ£¿£¡
-51.jqÖĞµÄeach·½·¨£¬ÒªÌø³öÓÃreturn false => break, return true => continue
-52.$(document).ajaxStop/Start()ÅĞ¶Ïµ±ajaxÖ´ĞĞÍê»òÕß¸Õ¿ªÊ¼Ê±Ö´ĞĞÄ³·½·¨£¬ËãÓĞÓÃµÄ°É
-	ajaxSend(function(event, request, settings){}), ÆäÖĞsettings¾ÍÊÇ$.ajax({})ÀïÃæµÄ²ÎÊı£¬¿ÉÒÔÊÖ¶¯´«Èë×Ô¼ºÏëÒªµÄ²ÎÊı
-53. <%= favicon_link_tag 'icon/00010.gif'%> Ìí¼ÓÍøÒ³±êÇ©µÄÍ¼±ê
-	×îºó»áÉú³É<link rel=¡±shortcut icon¡± type=¡±image/x-icon¡± href=/assets/icon/00010-balabala.gif>
-54.ÔÚform_forÀïÃæÒª´©ÎÄ¼şµÄÊ±ºò¿ÉÒÔÓÃ:html=>{¡®multipart¡¯ => true}
-55.Èç¹ûÔÚÒ»¸öcontrollerÀïÃæ´øÁËnew±È·½ËµEnergencyNewController
-	ÄÇÃ´ËüµÄÂ·ÓÉ»á±ä»¯index: admin_energency_news_index_path
+48.File.joinæ˜¯åŠ ä¸€å±‚è·¯å¾„å¦‚File.join(â€˜c:/fileâ€™, â€˜file_pathâ€™) => â€˜c:/file/file_pathâ€™
+49.railsæ‰‹åŠ¨è®¾ç½®å»¶è¿Ÿsleep(5s)
+50.åœ¨ç”¨jsé‡Œé¢ä¼šæœ‰ä¸ªå¥‡æ€ªçš„ç°è±¡ï¼Œæœ¬æ¥ç”¨æ¥ç”¨æ¥æ˜¾ç¤ºé»‘å±çš„loaddingæ”¾åœ¨ajaxä¸¤è¾¹ç«Ÿç„¶æ²¡æœ‰æ•ˆæœï¼Œè€Œæ”¾åœ¨ajaxé‡Œé¢æ‰æœ‰ç”¨ï¼Œä¸ºä»€ä¹ˆå‘¢ï¼Ÿï¼
+51.jqä¸­çš„eachæ–¹æ³•ï¼Œè¦è·³å‡ºç”¨return false => break, return true => continue
+52.$(document).ajaxStop/Start()åˆ¤æ–­å½“ajaxæ‰§è¡Œå®Œæˆ–è€…åˆšå¼€å§‹æ—¶æ‰§è¡ŒæŸæ–¹æ³•ï¼Œç®—æœ‰ç”¨çš„å§
+	ajaxSend(function(event, request, settings){}), å…¶ä¸­settingså°±æ˜¯$.ajax({})é‡Œé¢çš„å‚æ•°ï¼Œå¯ä»¥æ‰‹åŠ¨ä¼ å…¥è‡ªå·±æƒ³è¦çš„å‚æ•°
+53. <%= favicon_link_tag 'icon/00010.gif'%> æ·»åŠ ç½‘é¡µæ ‡ç­¾çš„å›¾æ ‡
+	æœ€åä¼šç”Ÿæˆ<link rel=â€shortcut iconâ€ type=â€image/x-iconâ€ href=/assets/icon/00010-balabala.gif>
+54.åœ¨form_foré‡Œé¢è¦ç©¿æ–‡ä»¶çš„æ—¶å€™å¯ä»¥ç”¨:html=>{â€˜multipartâ€™ => true}
+55.å¦‚æœåœ¨ä¸€ä¸ªcontrolleré‡Œé¢å¸¦äº†newæ¯”æ–¹è¯´EnergencyNewController
+	é‚£ä¹ˆå®ƒçš„è·¯ç”±ä¼šå˜åŒ–index: admin_energency_news_index_path
 						New: new_admin_energency_news_path
 						Edit: edit_admin_emergency_news_path
 						Delete/show/Update: admin_emergency_news_path
-56.Éè¶¨ÑéÖ¤Âú×ãÌõ¼ş´¥·¢£º
-	Ö¸¶¨·½·¨ if: :method
+56.è®¾å®šéªŒè¯æ»¡è¶³æ¡ä»¶è§¦å‘ï¼š
+	æŒ‡å®šæ–¹æ³• if: :method
 			validates :card_number, presence: true, if: :paid_with_card?
-	Ö¸¶¨×Ö·û´®if: :¡¯string¡¯
+	æŒ‡å®šå­—ç¬¦ä¸²if: :â€™stringâ€™
 			validates :surname, presence: true, if: "name.nil?"
-	Ö¸¶¨¿é if: Proc.new{ |a| a.value.present?}
+	æŒ‡å®šå— if: Proc.new{ |a| a.value.present?}
 			validates :display_order, :numericality => true, if: Proc.new{ |order| order.display_order.present?}
-57.Èç¹ûÄ³¸öÊı×éÔÚÑ­»·ÖĞÉ¾µôÁË×ÔÉíÄ³¸öÔªËØ£¬ÏÂÒ»´ÎÑ­»·Ê±ºóÃæµÄÔªËØË÷Òı»áÒÀ´Î¼õ1£¬³¤¶ÈÒ²»á¼õÒ»£¬¿ÉÄÜ»áµ¼ÖÂÑ­»·ÖĞ¶Ï£¨Èç¹ûÊÇÔÚÑ­»·µ½µ¹ÊıµÚ¶ş¸öÔªËØÊ±É¾³ı£¬×îºóÒ»¸öÔªËØ²»»áÑ­»·µ½£©Õâ¸öÊ±ºò¿ÉÒÔÔÙnewÒ»¸öÒ»ÑùµÄ
-58.this.form.action¿ÉÒÔ»ñÈ¡µ±Ç°±íµ¥µÄaction
-59.try·½·¨¿ÉÒÔ¸øËüÀïÃæµÄ·½·¨¼Ó¸ö²ÎÊı
-	right_banner.try(:right_banner_picture).try(:image).try(:url, :thumb)ÆäÖĞurlÊÇ·½·¨:thumbÊÇ²ÎÊı
-60.cssÀïÃæÓĞµÄ±³¾°Í¼Æ¬ÊÇ±»¼¯ºÏÔÚÒ»ÕÅÍ¼Æ¬ÉÏµÄÕâÊ±ºò¿ÉÒÔÓÃbackground-positionÀ´ÒÆ¶¯
-	-mpx, -npx±íÊ¾Ïò×óÏòÓÒ
-61.rubyÀïÃæÈç¹ûĞèÒªÅĞ¶ÏÊÇ·ñÎª¿ÕÔÙ×ö²Ù×÷µÄ»°¿ÉÒÔÓÃ
+57.å¦‚æœæŸä¸ªæ•°ç»„åœ¨å¾ªç¯ä¸­åˆ æ‰äº†è‡ªèº«æŸä¸ªå…ƒç´ ï¼Œä¸‹ä¸€æ¬¡å¾ªç¯æ—¶åé¢çš„å…ƒç´ ç´¢å¼•ä¼šä¾æ¬¡å‡1ï¼Œé•¿åº¦ä¹Ÿä¼šå‡ä¸€ï¼Œå¯èƒ½ä¼šå¯¼è‡´å¾ªç¯ä¸­æ–­ï¼ˆå¦‚æœæ˜¯åœ¨å¾ªç¯åˆ°å€’æ•°ç¬¬äºŒä¸ªå…ƒç´ æ—¶åˆ é™¤ï¼Œæœ€åä¸€ä¸ªå…ƒç´ ä¸ä¼šå¾ªç¯åˆ°ï¼‰è¿™ä¸ªæ—¶å€™å¯ä»¥å†newä¸€ä¸ªä¸€æ ·çš„
+58.this.form.actionå¯ä»¥è·å–å½“å‰è¡¨å•çš„action
+59.tryæ–¹æ³•å¯ä»¥ç»™å®ƒé‡Œé¢çš„æ–¹æ³•åŠ ä¸ªå‚æ•°
+	right_banner.try(:right_banner_picture).try(:image).try(:url, :thumb)å…¶ä¸­urlæ˜¯æ–¹æ³•:thumbæ˜¯å‚æ•°
+60.cssé‡Œé¢æœ‰çš„èƒŒæ™¯å›¾ç‰‡æ˜¯è¢«é›†åˆåœ¨ä¸€å¼ å›¾ç‰‡ä¸Šçš„è¿™æ—¶å€™å¯ä»¥ç”¨background-positionæ¥ç§»åŠ¨
+	-mpx, -npxè¡¨ç¤ºå‘å·¦å‘å³
+61.rubyé‡Œé¢å¦‚æœéœ€è¦åˆ¤æ–­æ˜¯å¦ä¸ºç©ºå†åšæ“ä½œçš„è¯å¯ä»¥ç”¨
 	If  xxxx.blank?
-	# ÕâÀïÊ²Ã´¶¼²»Ğ´
+	# è¿™é‡Œä»€ä¹ˆéƒ½ä¸å†™
 	Elsif xxxx
-62.¹ØÓÚÖ±½ÓÊ¹ÓÃÊÂ¼şºÍbindÊÂ¼ş
-	ÓĞÊ±ºòbindÒ»¸öµÄº¯ÊıµÄÊ±ºò»á¶à´ÎÔËĞĞ£¬»¹²»ÖªµÀÊÇÎªÊ²Ã´£¬¿ÉÄÜ¶à´Î°ó¶¨ÁË£¬ÕâÊ±ºò¿ÉÒÔ½â°óÖØĞÂ°ó¶¨£¬±ÈÈçËµ$(¡®#id¡¯).unbind(¡®click¡¯).bind(¡®click¡¯, function(){})
-	$(¡®.class¡¯).focus(function(){})
-	$(¡¯.class¡¯).bind(¡®focus click¡¯, data, function(){})
-		ÀïÃæ¿ÉÒÔÓÃunbindÈ¡Ïû°ó¶¨ÊÂ¼ş
-		¶øÖ±½ÓÊ¹ÓÃÊÂ¼şÊÇ²»ÄÜÈ¡Ïû°ó¶¨ÊÂ¼şµÄ(¼´Ê¹ÊÇÈ¥µôÓÃÀ´°ó¶¨µÄclassÒ²²»ÄÜÈ¥µôÊÂ¼ş)£¬ÓÃbindµÄºÃ´¦´ó¸ÅÔÚÕâÀï°É
-	$(¡®.class¡¯).bind({event: function, event: function})
-63.¶ÔÓÚ°´Ä³¸ö×Ö¶ÎÅÅĞò£¬ÓĞµÄÌõÄ¿´Ë¶ÎÎª¿Õ»áÄ¬ÈÏÅÅÔÚÇ°Ãæ£¬Èç²»Ïë¿ÉÒÔ
-	Mysql: Order by if(isnull(column), 1, 0), column¾Í»á½«¿ÕÖµÄ¬ÈÏÖÃºó(Ä¬ÈÏÀïÃæµÄÊÇ 0, 1)
+62.å…³äºç›´æ¥ä½¿ç”¨äº‹ä»¶å’Œbindäº‹ä»¶
+	æœ‰æ—¶å€™bindä¸€ä¸ªçš„å‡½æ•°çš„æ—¶å€™ä¼šå¤šæ¬¡è¿è¡Œï¼Œè¿˜ä¸çŸ¥é“æ˜¯ä¸ºä»€ä¹ˆï¼Œå¯èƒ½å¤šæ¬¡ç»‘å®šäº†ï¼Œè¿™æ—¶å€™å¯ä»¥è§£ç»‘é‡æ–°ç»‘å®šï¼Œæ¯”å¦‚è¯´$(â€˜#idâ€™).unbind(â€˜clickâ€™).bind(â€˜clickâ€™, function(){})
+	$(â€˜.classâ€™).focus(function(){})
+	$(â€™.classâ€™).bind(â€˜focus clickâ€™, data, function(){})
+		é‡Œé¢å¯ä»¥ç”¨unbindå–æ¶ˆç»‘å®šäº‹ä»¶
+		è€Œç›´æ¥ä½¿ç”¨äº‹ä»¶æ˜¯ä¸èƒ½å–æ¶ˆç»‘å®šäº‹ä»¶çš„(å³ä½¿æ˜¯å»æ‰ç”¨æ¥ç»‘å®šçš„classä¹Ÿä¸èƒ½å»æ‰äº‹ä»¶)ï¼Œç”¨bindçš„å¥½å¤„å¤§æ¦‚åœ¨è¿™é‡Œå§
+	$(â€˜.classâ€™).bind({event: function, event: function})
+63.å¯¹äºæŒ‰æŸä¸ªå­—æ®µæ’åºï¼Œæœ‰çš„æ¡ç›®æ­¤æ®µä¸ºç©ºä¼šé»˜è®¤æ’åœ¨å‰é¢ï¼Œå¦‚ä¸æƒ³å¯ä»¥
+	Mysql: Order by if(isnull(column), 1, 0), columnå°±ä¼šå°†ç©ºå€¼é»˜è®¤ç½®å(é»˜è®¤é‡Œé¢çš„æ˜¯ 0, 1)
 	Oracle: order by column nulls last/first
-64.jqÑ¡ÔñĞÖµÜ½áµã $(this).siblings() 
-	Prev() ÉÏÒ»¸öĞÖµÜ prevAll()Ç°ÃæËùÓĞĞÖµÜ next()ÏÂÒ»¸ö nextAll()ºóÃæËùÓĞ
-65.sqlÖĞdistrictÓÃÓÚ¹ıÂËÏàÍ¬µÄÖµ
-68.model.attributes(hash)¿ÉÒÔÓÃÀ´¼ÓÖµ
-69.@model.validates_numericality_of ¿ÉÒÔÕâÑùÔÚ·½·¨ÀïÃæµ÷ÓÃÑéÖ¤·½·¨£¬ÕâÑù»áÖ±½Ó½«Õâ¸öÑéÖ¤²úÉúµÄ´íÎóĞÅÏ¢´«ËÍµ½ÀïÃæ
+64.jqé€‰æ‹©å…„å¼Ÿç»“ç‚¹ $(this).siblings()
+	Prev() ä¸Šä¸€ä¸ªå…„å¼Ÿ prevAll()å‰é¢æ‰€æœ‰å…„å¼Ÿ next()ä¸‹ä¸€ä¸ª nextAll()åé¢æ‰€æœ‰
+65.sqlä¸­districtç”¨äºè¿‡æ»¤ç›¸åŒçš„å€¼
+68.model.attributes(hash)å¯ä»¥ç”¨æ¥åŠ å€¼
+69.@model.validates_numericality_of å¯ä»¥è¿™æ ·åœ¨æ–¹æ³•é‡Œé¢è°ƒç”¨éªŒè¯æ–¹æ³•ï¼Œè¿™æ ·ä¼šç›´æ¥å°†è¿™ä¸ªéªŒè¯äº§ç”Ÿçš„é”™è¯¯ä¿¡æ¯ä¼ é€åˆ°é‡Œé¢
 70.simple_form_for @model, {url: '', html:{id: ''}}
-	f.input ... as: :integer¿ÉÒÔÌí¼ÓÒ»¸ötype=number
-	wrapperµÄconfig¿ÉÒÔ¿´railsÒ»Ğ©²å¼şÀïÃæµÄÎÄµµ
+	f.input ... as: :integerå¯ä»¥æ·»åŠ ä¸€ä¸ªtype=number
+	wrapperçš„configå¯ä»¥çœ‹railsä¸€äº›æ’ä»¶é‡Œé¢çš„æ–‡æ¡£
 71.csv_data = CSV.generate do |csv|
    csv << []
-   
+
    end
    NFK.nfk('-s', csv_data)
 72.send_data(csv, type: 'text/csv', filename: encode_file_name("**.csv"))
-73.symbollize_keys! °Ñkey×ª»»³Ésym£¬Ö»ÒªkeyÏìÓ¦to_sym
-74.Â·ÓÉÖĞmemberºÍcollectionµÄ²»Í¬
-	member do 
-		get 'perview' # Éú³ÉµÄÂ·ÓÉÊÇ´øÀàµÄidµÄ£¬ Èçphotos/1/preview  Â·ÓÉ¾ÍÊÇpreview_photos_path(@photo)
+73.symbollize_keys! æŠŠkeyè½¬æ¢æˆsymï¼Œåªè¦keyå“åº”to_sym
+74.è·¯ç”±ä¸­memberå’Œcollectionçš„ä¸åŒ
+	member do
+		get 'perview' # ç”Ÿæˆçš„è·¯ç”±æ˜¯å¸¦ç±»çš„idçš„ï¼Œ å¦‚photos/1/preview  è·¯ç”±å°±æ˜¯preview_photos_path(@photo)
 	end
-	
-	:member ÊÇ¶Ôµ¥¸öÊµÌå½øĞĞ²Ù×÷£¬´´½¨Â·ÓÉ¸ñÊ½ÊÇ£º /:controller/:id/:your_method 
-	:collection ÊÇ¶ÔÊµÌå¼¯ºÏ½øĞĞ²Ù×÷£¬´´½¨Â·ÓÉ¸ñÊ½ÊÇ£º /:controller/:your_method 
-	:new ÊÇĞÂ½¨Ò»¸öÊµÌå£¬´´½¨Â·ÓÉ¸ñÊ½ÊÇ£º /:controller/:your_method/new
-	
-	map.resources :users, :collection => { :rss => :get } 
-	map.resources :users, :member => { :profile => :get } 
-	map.resources :users, :new => { :draft => :get } 
-	µÚÒ»ĞĞ´´½¨µÄÂ·ÓÉÊÇ£º/users/rss 
-	µÚ¶şĞĞ´´½¨µÄÂ·ÓÉÊÇ£º/users/1/profile 
-	¡°1¡±¾ÍÊÇuser_id£¬ÎÒÃÇĞèÒªÖªµÀÓÃ»§ID²ÅÄÜµÃµ½ÓÃ»§µÄprofile. 
-	µÚÈıĞĞ´´½¨µÄÂ·ÓÉÊÇ£º/users/new/draft
-	*member´´½¨µÄÂ·ÓÉ£¬°ïÖú·½·¨×îºóÃ»ÓĞs
-	
+
+	:member æ˜¯å¯¹å•ä¸ªå®ä½“è¿›è¡Œæ“ä½œï¼Œåˆ›å»ºè·¯ç”±æ ¼å¼æ˜¯ï¼š /:controller/:id/:your_method
+	:collection æ˜¯å¯¹å®ä½“é›†åˆè¿›è¡Œæ“ä½œï¼Œåˆ›å»ºè·¯ç”±æ ¼å¼æ˜¯ï¼š /:controller/:your_method
+	:new æ˜¯æ–°å»ºä¸€ä¸ªå®ä½“ï¼Œåˆ›å»ºè·¯ç”±æ ¼å¼æ˜¯ï¼š /:controller/:your_method/new
+
+	map.resources :users, :collection => { :rss => :get }
+	map.resources :users, :member => { :profile => :get }
+	map.resources :users, :new => { :draft => :get }
+	ç¬¬ä¸€è¡Œåˆ›å»ºçš„è·¯ç”±æ˜¯ï¼š/users/rss
+	ç¬¬äºŒè¡Œåˆ›å»ºçš„è·¯ç”±æ˜¯ï¼š/users/1/profile
+	â€œ1â€å°±æ˜¯user_idï¼Œæˆ‘ä»¬éœ€è¦çŸ¥é“ç”¨æˆ·IDæ‰èƒ½å¾—åˆ°ç”¨æˆ·çš„profile.
+	ç¬¬ä¸‰è¡Œåˆ›å»ºçš„è·¯ç”±æ˜¯ï¼š/users/new/draft
+	*memberåˆ›å»ºçš„è·¯ç”±ï¼Œå¸®åŠ©æ–¹æ³•æœ€åæ²¡æœ‰s
+
 75.Model.where(conditions).pluck(:id, 'models.name', 'model_parents.name') do |id, m_name, mp_name|
 		[id, m_name, mp_name]
 	end
-	
-76.pdfÏÂÔØ
+
+76.pdfä¸‹è½½
 	html = render_to_string template: "supplier_category_pos_codes/pos_code_pdf", encoding: 'UTF-8'
 	pdf = PDFKit.new(html)
-	
+
 	send_data pdf.to_pdf, :filename => encode_file_name('file_name.pdf'),
 							:type => 'application/pdf',
 							:desposition => 'outline'
-77.update_attributesÊÇÖ´ĞĞvalidationµÄ£¬ update_attribute²»Ö´ĞĞvalidation
-78.Barby ÀïÃæµÄto_pngÃ»ÓĞ¿í¶È£¬xdimÄÜµ÷¿í¶È
-79.datepickerÀïÃæÓĞ¸östartDateÊôĞÔÉèÖÃ´ÓÕâÌì¿ªÊ¼Ç°ÃæµÄ¶¼²»ÄÜÑ¡Ôñ£¬¶ÔÓ¦ÓĞ¸öendDate new Date()»òÕßµ±Ç°Ê±¼ä£¬new Date(full_year, month-1, date)£¬ÀïÃæ-1¿ÉÒÔ±íÊ¾12ÔÂ getMonth()»ñÈ¡µ±Ç°ÔÂ-1,Èç¹ûÏë»ñÈ¡Õâ¸öÔÂµÄ×îºóÒ»Ìì¿ÉÒÔÓÃÏÂÒ»¸öÔÂµÄ£¬ÈÕÆÚÊÇ0¾Í¿ÉÒÔÁË
-	ruby »ñÈ¡Ò»¸öÔÂ×îºóÒ»ÃëTime.at(Time.new(2017, 12).to_i-1)
-80.bootstrapÊäÈë¿ò×éinput-groupÀïÃæ¿ÉÒÔÔÚform-control ºóÃæ¼Óspan£¬class=input-group-addon ÀïÃæ¾Í¿ÉÒÔÍ¬ĞĞ¼ÓÄÚÈİÁË
+77.update_attributesæ˜¯æ‰§è¡Œvalidationçš„ï¼Œ update_attributeä¸æ‰§è¡Œvalidation
+78.Barby é‡Œé¢çš„to_pngæ²¡æœ‰å®½åº¦ï¼Œxdimèƒ½è°ƒå®½åº¦
+79.datepickeré‡Œé¢æœ‰ä¸ªstartDateå±æ€§è®¾ç½®ä»è¿™å¤©å¼€å§‹å‰é¢çš„éƒ½ä¸èƒ½é€‰æ‹©ï¼Œå¯¹åº”æœ‰ä¸ªendDate new Date()æˆ–è€…å½“å‰æ—¶é—´ï¼Œnew Date(full_year, month-1, date)ï¼Œé‡Œé¢-1å¯ä»¥è¡¨ç¤º12æœˆ getMonth()è·å–å½“å‰æœˆ-1,å¦‚æœæƒ³è·å–è¿™ä¸ªæœˆçš„æœ€åä¸€å¤©å¯ä»¥ç”¨ä¸‹ä¸€ä¸ªæœˆçš„ï¼Œæ—¥æœŸæ˜¯0å°±å¯ä»¥äº†
+	ruby è·å–ä¸€ä¸ªæœˆæœ€åä¸€ç§’Time.at(Time.new(2017, 12).to_i-1)
+80.bootstrapè¾“å…¥æ¡†ç»„input-groupé‡Œé¢å¯ä»¥åœ¨form-control åé¢åŠ spanï¼Œclass=input-group-addon é‡Œé¢å°±å¯ä»¥åŒè¡ŒåŠ å†…å®¹äº†
 81.Class Proc
 		class << self
-			# Ğ´ÔÚÕâÀïÃæµÄÕÔ¶¼ÊÇÀà·½·¨
+			# å†™åœ¨è¿™é‡Œé¢çš„èµµéƒ½æ˜¯ç±»æ–¹æ³•
 		end
 	end
-82.paperclipÍ¼Æ¬ÉÏ´«¶ÔÍ¼Æ¬µÄÒ»Ğ©ĞŞ¸Ä
+82.paperclipå›¾ç‰‡ä¸Šä¼ å¯¹å›¾ç‰‡çš„ä¸€äº›ä¿®æ”¹
 	http://railsfun.tw/t/paperclip/64
 	:styles => {:coutom => {'640x640>', :jpg}}
 	:convert_options => {
 		:custom => '-background white -gravity center -extent 640x640 -colorspace sRGB -quality 70'
 	}
-	#styles convert_optionsÀïÃæÓĞµÄstylesÀïÃæÒ²ÒªÓĞ²ÅÄÜÉúĞ§
-	#background whiteÊÇÍ¿°×
-	
-83.WdatePicker({ qsEnabled:false, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false })¿ÉÒÔÖ»Ñ¡ÔñÔÂ·İ
+	#styles convert_optionsé‡Œé¢æœ‰çš„stylesé‡Œé¢ä¹Ÿè¦æœ‰æ‰èƒ½ç”Ÿæ•ˆ
+	#background whiteæ˜¯æ¶‚ç™½
+
+83.WdatePicker({ qsEnabled:false, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false })å¯ä»¥åªé€‰æ‹©æœˆä»½
 
 84.
-p.banner_pic {		//ÕâÑù²»»á°ÑÍ¼Æ¬×óÓÒÀ­Éì£¬ÎªÊ²Ã´ÄØ
-  width: 300px;		
+p.banner_pic {		//è¿™æ ·ä¸ä¼šæŠŠå›¾ç‰‡å·¦å³æ‹‰ä¼¸ï¼Œä¸ºä»€ä¹ˆå‘¢
+  width: 300px;
   height: 100px;
   text-align: center;
-  display: table-cell;	//¼ÓÁËÕâ¸öÊôĞÔ¿ÉÒÔÈÃÏÂÃæµÄÍ¼Æ¬´¹Ö±¾ÓÖĞ
+  display: table-cell;	//åŠ äº†è¿™ä¸ªå±æ€§å¯ä»¥è®©ä¸‹é¢çš„å›¾ç‰‡å‚ç›´å±…ä¸­
 }
 p.banner_pic img {
   vertical-align: center;
 }
 
-.banner_pic {		//ÕâÖÖÈ´»á
+.banner_pic {		//è¿™ç§å´ä¼š
   width: 300px;
   height: 100px;
   text-align: center;
@@ -229,83 +229,83 @@ p.banner_pic img {
 .banner_pic img {
   vertical-align: center;
 }
-85.Ê¹ÓÃmodalµÄÊ±ºò²»ÄÜ°ÑmodalµÄdivĞ´µ½Ä£°åÀïÃæÈ¥ÁË£¬·ñÔò»áÊ§Ğ§£¬ÔÙ´ÎrenderµÄÊ±ºò»áÏûÊ§²»ÁË
+85.ä½¿ç”¨modalçš„æ—¶å€™ä¸èƒ½æŠŠmodalçš„divå†™åˆ°æ¨¡æ¿é‡Œé¢å»äº†ï¼Œå¦åˆ™ä¼šå¤±æ•ˆï¼Œå†æ¬¡renderçš„æ—¶å€™ä¼šæ¶ˆå¤±ä¸äº†
 
-86.union²éÑ¯µÄÊ±ºò¿ÉÒÔ°Ñ¶àÕÅ±íÁªºÏÆğÀ´£¬²éÑ¯µÄ½á¹û°´ÁĞdistinct
+86.unionæŸ¥è¯¢çš„æ—¶å€™å¯ä»¥æŠŠå¤šå¼ è¡¨è”åˆèµ·æ¥ï¼ŒæŸ¥è¯¢çš„ç»“æœæŒ‰åˆ—distinct
 	select id as id from table1 where name like '11'
 	union
 	select id as id from table2 where name like '22'
-	find_by_sql()¿ÉÒÔÓÃÈÎÒâÒ»ÕÅ±í²éÑ¯£¬½á¹ûÊÇÊı×é
-	KaminariÓĞÒ»¸ö·½·¨Kaminari.paginate_array(@products, total_count: @products.length).page(params[:page]).per(Settings[:per_page])
-	¿ÉÒÔÓÃÀ´¶ÔÊı×é×÷·ÖÒ³
-	ÕâÀï»¹È±ÉÙÒ»¸öentry_name,¿ÉÒÔÔÚpage_entries_info @products, entry_name: '' ÀïÃæÖ¸¶¨
-87.¹ØÓÚÊı¾İ¿âµÄË÷Òı£¬²ÂÏë¿ÉÄÜÊÇÕë¶ÔµÚÒ»Ìõsql»á²»Ò»ÑùµÄ
-	LocalProductsµÄvendor_id/base_local_prodct_id¼ÓË÷Òı  ¸ù¾İËÑË÷µÄ×Ö¶Î×éºÏ³ÉË÷Òı
-	
-88.ÓÃcmdµÇÂ¼mysqlµÄÊ±ºò mysql -uroot -pchen5200heÃ»ÓĞ¿Õ¸ñ
+	find_by_sql()å¯ä»¥ç”¨ä»»æ„ä¸€å¼ è¡¨æŸ¥è¯¢ï¼Œç»“æœæ˜¯æ•°ç»„
+	Kaminariæœ‰ä¸€ä¸ªæ–¹æ³•Kaminari.paginate_array(@products, total_count: @products.length).page(params[:page]).per(Settings[:per_page])
+	å¯ä»¥ç”¨æ¥å¯¹æ•°ç»„ä½œåˆ†é¡µ
+	è¿™é‡Œè¿˜ç¼ºå°‘ä¸€ä¸ªentry_name,å¯ä»¥åœ¨page_entries_info @products, entry_name: '' é‡Œé¢æŒ‡å®š
+87.å…³äºæ•°æ®åº“çš„ç´¢å¼•ï¼ŒçŒœæƒ³å¯èƒ½æ˜¯é’ˆå¯¹ç¬¬ä¸€æ¡sqlä¼šä¸ä¸€æ ·çš„
+	LocalProductsçš„vendor_id/base_local_prodct_idåŠ ç´¢å¼•  æ ¹æ®æœç´¢çš„å­—æ®µç»„åˆæˆç´¢å¼•
+
+88.ç”¨cmdç™»å½•mysqlçš„æ—¶å€™ mysql -uroot -pchen5200heæ²¡æœ‰ç©ºæ ¼
 	mysqld --skip-grant-tables
-	
-89.Èç¹ûÒ»¸öselectÀïÃæÒ»¸öoptionÒ²Ã»ÓĞ£¬ÄÇÌá½»µÄÊ±ºò½«Ã»ÓĞÖµ»á´«ÉÏÈ¥£¬Á¬¿Õ×Ö·û´®¶¼Ã»ÓĞ
-90.<button class="btn btn-info" type="submit" onclick="$('#pwi_search').attr('action','<%= search_admin_in_librays_path %>');"> Õâ¸öÒâË¼ËÆºõÊÇÔÚ±íµ¥ÖĞ°´enterµÄÊ±ºòÏàµ±ÓÚclick
+
+89.å¦‚æœä¸€ä¸ªselecté‡Œé¢ä¸€ä¸ªoptionä¹Ÿæ²¡æœ‰ï¼Œé‚£æäº¤çš„æ—¶å€™å°†æ²¡æœ‰å€¼ä¼šä¼ ä¸Šå»ï¼Œè¿ç©ºå­—ç¬¦ä¸²éƒ½æ²¡æœ‰
+90.<button class="btn btn-info" type="submit" onclick="$('#pwi_search').attr('action','<%= search_admin_in_librays_path %>');"> è¿™ä¸ªæ„æ€ä¼¼ä¹æ˜¯åœ¨è¡¨å•ä¸­æŒ‰enterçš„æ—¶å€™ç›¸å½“äºclick
 
 91.
 	@helper ||= Class.new do
       include ActionView::Helpers::NumberHelper
     end.new
-	
-92.tasks£º
-	ÔÚÏîÄ¿µÄlib\tasksÄ¿Â¼ÏÂÃæ
-	Ğ´³ÉÎÄ¼ş.rake
-	namespace :namesp do 
+
+92.tasksï¼š
+	åœ¨é¡¹ç›®çš„lib\tasksç›®å½•ä¸‹é¢
+	å†™æˆæ–‡ä»¶.rake
+	namespace :namesp do
 		desc 'description'
-		task task_name: :enviroment do 
-		
+		task task_name: :enviroment do
+
 		end
 	end
-	ÔÚÏîÄ¿ÏÂÃæÖ´ĞĞrake¾Í¿ÉÒÔÁËrubymineÔÚterminalÏÂÃæ µ½ÏîÄ¿Ä¿Â¼ rake namesp:task_name
-	
-93.ÓÃremoteÌá½»±íÕÃµÄÊ±ºòÈç¹û ´«ÊäÁËÎÄ¼ş£¬»áÁ¢¼´²úÉúajaxCompleteÊÂ¼ş
-94.stringÀàĞÍµÄjsÈç"<div></div>"Ö»ÄÜÓÃinnterHtml£¬domÀàĞÍdocument.createElement('div')µÄ²ÅÄÜÓÃappendChild
+	åœ¨é¡¹ç›®ä¸‹é¢æ‰§è¡Œrakeå°±å¯ä»¥äº†rubymineåœ¨terminalä¸‹é¢ åˆ°é¡¹ç›®ç›®å½• rake namesp:task_name
+
+93.ç”¨remoteæäº¤è¡¨å½°çš„æ—¶å€™å¦‚æœ ä¼ è¾“äº†æ–‡ä»¶ï¼Œä¼šç«‹å³äº§ç”ŸajaxCompleteäº‹ä»¶
+94.stringç±»å‹çš„jså¦‚"<div></div>"åªèƒ½ç”¨innterHtmlï¼Œdomç±»å‹document.createElement('div')çš„æ‰èƒ½ç”¨appendChild
 
 95.
 	rake pictures_process:campain_picture_update RAILS_ENV=production
 	rake pictures_process:right_banner_picture_update RAILS_ENV=production
-	²âÊÔ·şÎñÆ÷ÉÏÖ´ĞĞrake
-	
+	æµ‹è¯•æœåŠ¡å™¨ä¸Šæ‰§è¡Œrake
+
 96.
-	ÔÚÓÃjsÔÚÒ³Ãæ¼ÓÔØÍê³ÉµÄÊ±ºò¶ÁÈ¡Í¼Æ¬£¬·¢ÏÖÍ¼Æ¬µÄwidth/heightÖµÎª0
-	ÒòÎªwindow.onloadºÍ$(document).onload()=$()ÊÇ²»Ò»ÑùµÄ£¬dom¼ÓÔØÍêÍ¼Æ¬»¹Ã»¼ÓÔØÍê£¬ËùÒÔ»ñÈ¡µÄ¾Í»áÊÇ0
-	ÉÏÃæËµµÄËÆºõ¶¼Ã»ÓÃ
-	Í¼Æ¬µÄonloadÊÂ¼şÒªĞ´ÔÚ<img>ÀïÃæ²ÅºÃÉúĞ§£º http://www.jb51.net/article/43003.htm
+	åœ¨ç”¨jsåœ¨é¡µé¢åŠ è½½å®Œæˆçš„æ—¶å€™è¯»å–å›¾ç‰‡ï¼Œå‘ç°å›¾ç‰‡çš„width/heightå€¼ä¸º0
+	å› ä¸ºwindow.onloadå’Œ$(document).onload()=$()æ˜¯ä¸ä¸€æ ·çš„ï¼ŒdomåŠ è½½å®Œå›¾ç‰‡è¿˜æ²¡åŠ è½½å®Œï¼Œæ‰€ä»¥è·å–çš„å°±ä¼šæ˜¯0
+	ä¸Šé¢è¯´çš„ä¼¼ä¹éƒ½æ²¡ç”¨
+	å›¾ç‰‡çš„onloadäº‹ä»¶è¦å†™åœ¨<img>é‡Œé¢æ‰å¥½ç”Ÿæ•ˆï¼š http://www.jb51.net/article/43003.htm
 97.
-	cssÒıÓÃÎÄ¼ş<link rel="stylesheet" type="text/css" href="style.css">
-	jsÒıÓÃÎÄ¼ş<script type="text/javascript" src="js.js">
-98.Èç¹ûÒ³ÃæÉÏÓĞÒ»¸ö¸ù¾İxxÃû×ÖËÑË÷µÄ£¬Ãû×ÖÖĞÓĞ¿Õ¸ñµÄÊ±ºò¾ÍÒª×¢ÒâÁË£¬ÔÚÍøÒ³ÉÏÖ»»áÏÔÊ¾Ò»¸ö¿Õ¸ñ£¬Êµ¼ÊÉÏÄÇ¸öÃû×ÖÀïÃæ¿ÉÄÜÓĞ¼¸¸ö¿Õ¸ñ£¬ËùÒÔ¿ÉÄÜ³öÏÖ´òÁËÒ»¸ö¿Õ¸ñ£¬¶øÕâ¸ö¿Õ¸ñºóÃæ»¹¸úÁË´Ê¾ÍËÑË÷²»³ö½á¹ûÁË
-99.ÏëÈÃÒ»¸öÍ¼Æ¬ÔÚÒ»¸öÈİÆ÷ÄÚ¾ÓÖĞ¶ÔÆë£¬²¢ÇÒ¿í¶È×ÔÊÊÓ¦µÄ»°¾ÍÒª
+	csså¼•ç”¨æ–‡ä»¶<link rel="stylesheet" type="text/css" href="style.css">
+	jså¼•ç”¨æ–‡ä»¶<script type="text/javascript" src="js.js">
+98.å¦‚æœé¡µé¢ä¸Šæœ‰ä¸€ä¸ªæ ¹æ®xxåå­—æœç´¢çš„ï¼Œåå­—ä¸­æœ‰ç©ºæ ¼çš„æ—¶å€™å°±è¦æ³¨æ„äº†ï¼Œåœ¨ç½‘é¡µä¸Šåªä¼šæ˜¾ç¤ºä¸€ä¸ªç©ºæ ¼ï¼Œå®é™…ä¸Šé‚£ä¸ªåå­—é‡Œé¢å¯èƒ½æœ‰å‡ ä¸ªç©ºæ ¼ï¼Œæ‰€ä»¥å¯èƒ½å‡ºç°æ‰“äº†ä¸€ä¸ªç©ºæ ¼ï¼Œè€Œè¿™ä¸ªç©ºæ ¼åé¢è¿˜è·Ÿäº†è¯å°±æœç´¢ä¸å‡ºç»“æœäº†
+99.æƒ³è®©ä¸€ä¸ªå›¾ç‰‡åœ¨ä¸€ä¸ªå®¹å™¨å†…å±…ä¸­å¯¹é½ï¼Œå¹¶ä¸”å®½åº¦è‡ªé€‚åº”çš„è¯å°±è¦
 	box{display:table-cell;vertical-align:middle;text-align-center;}
 	img{max-width:box-width;max-height:box-height;}
-100.rubyÀïÃæµÄstrftimeÊÇ('%Y/%m/%d'), jsÀïÃæµÄÊÇnew Date().Format('yyyy-MM-dd HH:mm:ss')
-101.Model.find_or_initialize_by()²éÑ¯µ½Ò»¸öModel»òÕß³õÊ¼»¯Ò»¸ömodel
-102.ÔÚ¹Ì¶¨¿í¶ÈµÄÈİÆ÷ÄÚÈç¹ûÎÄ×ÖºÍÍ¼Æ¬Ïà½»ÁË£¬²»·Á°ÑÎÄ×ÖÉèÖÃ³Éoverflow
-103.ÔÚ±£´æÊ§°ÜrenderÒ»¸öÒ³ÃæµÄÊ±ºò£¬Èç¹ûÓĞÊ²Ã´ÖµÒªÍ¨¹ı@±äÁ¿´«µİµ½Ò³ÃæÉÏ£¬ĞèÒªÔÚrender Ö®Ç°¸³Öµ
-104.bootstrapµÄcolorpickerÔÚjs³õÊ¼»¯µÄÊ±ºò»áÉú³ÉÁ½¸ödiv£¬ÔÚ×öajaxµÄÊ±ºò×¢Òâ²»ÒªÈ¥°ÑÕâ¸ö³õÊ¼»¯°üº¬ÔÚÁËrenderÀïÃæÔì³É¶à´Î³õÊ¼»¯£¬·ñÔò»áÓĞcolorpicker²»ÏûÊ§µÄÎÊÌâ
+100.rubyé‡Œé¢çš„strftimeæ˜¯('%Y/%m/%d'), jsé‡Œé¢çš„æ˜¯new Date().Format('yyyy-MM-dd HH:mm:ss')
+101.Model.find_or_initialize_by()æŸ¥è¯¢åˆ°ä¸€ä¸ªModelæˆ–è€…åˆå§‹åŒ–ä¸€ä¸ªmodel
+102.åœ¨å›ºå®šå®½åº¦çš„å®¹å™¨å†…å¦‚æœæ–‡å­—å’Œå›¾ç‰‡ç›¸äº¤äº†ï¼Œä¸å¦¨æŠŠæ–‡å­—è®¾ç½®æˆoverflow
+103.åœ¨ä¿å­˜å¤±è´¥renderä¸€ä¸ªé¡µé¢çš„æ—¶å€™ï¼Œå¦‚æœæœ‰ä»€ä¹ˆå€¼è¦é€šè¿‡@å˜é‡ä¼ é€’åˆ°é¡µé¢ä¸Šï¼Œéœ€è¦åœ¨render ä¹‹å‰èµ‹å€¼
+104.bootstrapçš„colorpickeråœ¨jsåˆå§‹åŒ–çš„æ—¶å€™ä¼šç”Ÿæˆä¸¤ä¸ªdivï¼Œåœ¨åšajaxçš„æ—¶å€™æ³¨æ„ä¸è¦å»æŠŠè¿™ä¸ªåˆå§‹åŒ–åŒ…å«åœ¨äº†renderé‡Œé¢é€ æˆå¤šæ¬¡åˆå§‹åŒ–ï¼Œå¦åˆ™ä¼šæœ‰colorpickerä¸æ¶ˆå¤±çš„é—®é¢˜
 
-105.ÔÚdivÀïÃæ£¬Èç¹ûÏëÈÃ±ß¾àÓĞÑÕÉ«£¬Ö»ÄÜÊÇpaddingÁË
-	¸øÒ»¸öÏÈ¸øÈİÆ÷ÉèÖÃÑÕÉ«ÔÙ¸ø¼Ópadding,marginÊÇÃ»ÓĞÑÕÉ«µÄ
-	
-106.Ò»Ğ©²å¼şÒıÓÃµ½railsÏîÄ¿ÖĞµÄÊ±ºò£¬ĞèÒª·Ö¿ª·Åµ½¼¸¸öÎÄ¼ş¼Ğ
-	×¢Òâ²»ÄÜÖ»µ¥µ¥ÒıÈëjsºÍcssÒ²¿ÉÄÜÓĞÍ¼Æ¬»òÕß×ÖÌåÒÀÀµµÄ
-	Ïñbootstrap£¬¿ÉÄÜ»áÓĞÒ»Ğ©Í¼±ê²»ÄÜÏÔÊ¾£¬¾ÍÊÇÉÙÁË×ÖÌåÎÄ¼ş
-	
-107.timestampsÀïÃæµÄÊ±¼äÈç¹û²»ÉèÖÃÄÇÃ´Ä¬ÈÏ¾ÍÊÇUTCµÄÊ±¼äÁË
-	Èç¹ûÈç¹ûÊÇ¶«8Çø£¬ÄÇÃ´´æ´¢µÄÊ±¼ä¾Í»áÍí8¸öĞ¡Ê±
-	ĞèÒª×öÉèÖÃµÄ»°¾ÍÉèÖÃÊ±¼ä
+105.åœ¨divé‡Œé¢ï¼Œå¦‚æœæƒ³è®©è¾¹è·æœ‰é¢œè‰²ï¼Œåªèƒ½æ˜¯paddingäº†
+	ç»™ä¸€ä¸ªå…ˆç»™å®¹å™¨è®¾ç½®é¢œè‰²å†ç»™åŠ padding,marginæ˜¯æ²¡æœ‰é¢œè‰²çš„
+
+106.ä¸€äº›æ’ä»¶å¼•ç”¨åˆ°railsé¡¹ç›®ä¸­çš„æ—¶å€™ï¼Œéœ€è¦åˆ†å¼€æ”¾åˆ°å‡ ä¸ªæ–‡ä»¶å¤¹
+	æ³¨æ„ä¸èƒ½åªå•å•å¼•å…¥jså’Œcssä¹Ÿå¯èƒ½æœ‰å›¾ç‰‡æˆ–è€…å­—ä½“ä¾èµ–çš„
+	åƒbootstrapï¼Œå¯èƒ½ä¼šæœ‰ä¸€äº›å›¾æ ‡ä¸èƒ½æ˜¾ç¤ºï¼Œå°±æ˜¯å°‘äº†å­—ä½“æ–‡ä»¶
+
+107.timestampsé‡Œé¢çš„æ—¶é—´å¦‚æœä¸è®¾ç½®é‚£ä¹ˆé»˜è®¤å°±æ˜¯UTCçš„æ—¶é—´äº†
+	å¦‚æœå¦‚æœæ˜¯ä¸œ8åŒºï¼Œé‚£ä¹ˆå­˜å‚¨çš„æ—¶é—´å°±ä¼šæ™š8ä¸ªå°æ—¶
+	éœ€è¦åšè®¾ç½®çš„è¯å°±è®¾ç½®æ—¶é—´
 	config.time_zone = 'Beijing'
 	config.active_record.default_timezone = :local
-	ÕâÀïÈç¹û´úÂë·şÎñÆ÷ºÍdb·şÎñÆ÷²»ÔÚÒ»Æğ£¬ÄÇÃ´Ê±¼ä»áÊÇ´úÂë·şÎñÆ÷
+	è¿™é‡Œå¦‚æœä»£ç æœåŠ¡å™¨å’ŒdbæœåŠ¡å™¨ä¸åœ¨ä¸€èµ·ï¼Œé‚£ä¹ˆæ—¶é—´ä¼šæ˜¯ä»£ç æœåŠ¡å™¨
 	https://ruby-china.org/topics/16187
-108.¼ÙÉ¾³ı
-	
+108.å‡åˆ é™¤
+
 109.Exception:
 	Interrupt
 	NoMemoryError
@@ -313,53 +313,53 @@ p.banner_pic img {
 	ScriptError
 	StandardError
 	SystemExit
-	×Ü¹²ÆßÖÖrescue => e  Ä¬ÈÏµÄÊÇStandardError£¬Èç¹û²»Ö¸¶¨¿ÉÄÜ»á²¶×½²»µ½Òì³£
-	ÎÊÌâÀ´×ÔslipsÏÂÃæexcelµÄÉÏ´«
+	æ€»å…±ä¸ƒç§rescue => e  é»˜è®¤çš„æ˜¯StandardErrorï¼Œå¦‚æœä¸æŒ‡å®šå¯èƒ½ä¼šæ•æ‰ä¸åˆ°å¼‚å¸¸
+	é—®é¢˜æ¥è‡ªslipsä¸‹é¢excelçš„ä¸Šä¼ 
 110.
-	routeÅä·¨
-	resources :posts do 
+	routeé…æ³•
+	resources :posts do
 		match :css, :via => [:post] #=> post_css_path
-		collection do 
+		collection do
 			match :js, :via => [:post] #=> js_posts_path
 		end
 	end
-111.ÓÃ×Ö·ûÆ÷µ÷ÓÃ·½·¨
+111.ç”¨å­—ç¬¦å™¨è°ƒç”¨æ–¹æ³•
 	try("method".to_sym)
-	
-112.ÉÏ´«¡°false¡±×Ö·û´®¸³Öµ¸ø¶ÔÏóBoolÀàĞÍµÄ±äÁ¿»á×Ô¶¯×ª»¯³Éfalse
+
+112.ä¸Šä¼ â€œfalseâ€å­—ç¬¦ä¸²èµ‹å€¼ç»™å¯¹è±¡Boolç±»å‹çš„å˜é‡ä¼šè‡ªåŠ¨è½¬åŒ–æˆfalse
 113.
 	Can't verify CSRF token authenticity
-	ĞèÒªÓÃrailsµÄform°ïÖú·½·¨£¬»òÕßskipÑéÖ¤
+	éœ€è¦ç”¨railsçš„formå¸®åŠ©æ–¹æ³•ï¼Œæˆ–è€…skipéªŒè¯
 	  skip_before_filter :verify_authenticity_token, only: [:is_auto_selecting]
-	  
-114.ÔÚ·şÎñÆ÷ÉÏÃæ£¬Èç¹ûÓĞ¶à¸ö·şÎñÆ÷£¬ÇëÇó·şÎñÆ÷AÉú³ÉÒ»¸öÎÄ¼ş£¬È»ºóÈ¥ÏÂÔØÕâ¸öÎÄ¼şÈ´ÇëÇóµ½ÁËB£¬»áµ¼ÖÂÂ·¾¶´íÎóµÄÎÊÌâ¡£Õâ¸ö¿ÉÒÔÉèÖÃÎÄ¼ş¼Ğ¹²Ïí
 
-115.Ê²Ã´Ê±ºò»áÔÚdbÀïÃæ´æ¿ÕÖµ£¬Ê²Ã´Ê±ºò»á´ænullÄØ£¿
-116.ÔÚ¶à±íµ¥ÁªºÏÑéÖ¤µÄÊ±ºò£¬µ¥¸öµÄ±íµ¥ÑéÖ¤¿ÉÄÜÍ¨¹ı£¬µ«ÁªºÏÑéÖ¤Í¨²»¹ı£¬¸øÕâ¸öÁªºÏÑéÖ¤µÄ¶à¸ö±íµ¥Ìí¼Ó´íÎóÑùÊ½£¬¿ÉÒÔÔÚÌí¼ÓÁªºÏÑéÖ¤´íÎóÊ±ÊÖ¶¯add errors(µ¥¸ö±íµ¥)£¬È»ºóÔÙÏë°ì·¨È¥µô´íÎóĞÅÏ¢¾ÍokÁË¡£
-	¶ÔÓÚÓĞĞ©´íÎó²»ÏëÏÔÊ¾full_errors£¬¿ÉÒÔ°Ñ×Ö¶ÎµÄÃûÉèÖÃ³É¿Õ´®£¬¾Í¿ÉÒÔ²»ÏÔÊ¾×Ö¶ÎÃûÁË
-117.¶¨ÒåÔÚ$(function(){})ÀïÃæµÄº¯Êı£¬±äÁ¿ÔÚconsoleÀïÃæ·ÃÎÊ²»µ½
-118.ÅĞ¶ÏAvtiveModelµÄÖµÊÇ·ñ¸Ä±ä
+114.åœ¨æœåŠ¡å™¨ä¸Šé¢ï¼Œå¦‚æœæœ‰å¤šä¸ªæœåŠ¡å™¨ï¼Œè¯·æ±‚æœåŠ¡å™¨Aç”Ÿæˆä¸€ä¸ªæ–‡ä»¶ï¼Œç„¶åå»ä¸‹è½½è¿™ä¸ªæ–‡ä»¶å´è¯·æ±‚åˆ°äº†Bï¼Œä¼šå¯¼è‡´è·¯å¾„é”™è¯¯çš„é—®é¢˜ã€‚è¿™ä¸ªå¯ä»¥è®¾ç½®æ–‡ä»¶å¤¹å…±äº«
+
+115.ä»€ä¹ˆæ—¶å€™ä¼šåœ¨dbé‡Œé¢å­˜ç©ºå€¼ï¼Œä»€ä¹ˆæ—¶å€™ä¼šå­˜nullå‘¢ï¼Ÿ
+116.åœ¨å¤šè¡¨å•è”åˆéªŒè¯çš„æ—¶å€™ï¼Œå•ä¸ªçš„è¡¨å•éªŒè¯å¯èƒ½é€šè¿‡ï¼Œä½†è”åˆéªŒè¯é€šä¸è¿‡ï¼Œç»™è¿™ä¸ªè”åˆéªŒè¯çš„å¤šä¸ªè¡¨å•æ·»åŠ é”™è¯¯æ ·å¼ï¼Œå¯ä»¥åœ¨æ·»åŠ è”åˆéªŒè¯é”™è¯¯æ—¶æ‰‹åŠ¨add errors(å•ä¸ªè¡¨å•)ï¼Œç„¶åå†æƒ³åŠæ³•å»æ‰é”™è¯¯ä¿¡æ¯å°±okäº†ã€‚
+	å¯¹äºæœ‰äº›é”™è¯¯ä¸æƒ³æ˜¾ç¤ºfull_errorsï¼Œå¯ä»¥æŠŠå­—æ®µçš„åè®¾ç½®æˆç©ºä¸²ï¼Œå°±å¯ä»¥ä¸æ˜¾ç¤ºå­—æ®µåäº†
+117.å®šä¹‰åœ¨$(function(){})é‡Œé¢çš„å‡½æ•°ï¼Œå˜é‡åœ¨consoleé‡Œé¢è®¿é—®ä¸åˆ°
+118.åˆ¤æ–­AvtiveModelçš„å€¼æ˜¯å¦æ”¹å˜
 	previous_changes()
 	changes()
 	...
-	
-	»¹ÓĞ¸öafter_saveºÍbefore_saveµÈµÈÊÂ¼ş
-	
-119.ÔÚModelÀïÃæ¶¨ÒåÒ»¸öenumµÄÊ±ºò
-	enum room_type = {:washitsu => 1, :youshitsu => 2...}
-	ROOM_TYPE = {:washitsu => "ºÍÊÒ", :youshitsu => "ÑóÊÒ"}
-	ÕâÀïÃæ¶ÔÓÚroom_typeÊôĞÔ1ºÍ"washitsu"ÊÇµÈ¼ÛµÄ£¬»ñÈ¡µ½µÄÖµÒ²ÊÇ"washitsu"
-	¿ÉÒÔÓÃModel.room_typesÀ´»ñÈ¡Õâ¸öenum
-120.¶ÔÓÚÂ·ÓÉÅäÖÃ£¬Èç¹ûÓĞ³åÍ»µÄ»°£¬»áÓÅÏÈ½øĞ´ÔÚÇ°ÃæµÄÄÇÌõ
-	FreePage.all.try(:each) do |fp|
-		get fp.key, to: 'free_pages#show'	//ÕâÀï¿ÉÒÔÍ¨¹ırequest.urlÀ´ÕÒµ½ÄÇ¸ökey
-	end
-	Ò²¿ÉÒÔĞ´
-	get ':key', :to => 'free_pages#show'	//ÕâÀï¸ü¼òµ¥£¬²»¹ı»áÆ¥Åä¸ü¶àµÄ²»ÖªµÀÀ´Ô´µÄkey°É
-	¡¾Ç°Ì¨free_pagesµÄ±êÌâ»òĞí¿ÉÒÔÓÃjsÀ´¸Ä¡¿
-121.ÅĞ¶ÏÒ»¸öÊı×éÊÇ·ñÈ«Îª¿ÕµÄÊ±ºò¿ÉÒÔÓÃarr.all?(:&blank?)(»òÕß´«block)Ò²¿ÉÒÔarr.any?(:&present?)
 
-122.µ¼³ö/¶ÁÈ¡excel
+	è¿˜æœ‰ä¸ªafter_saveå’Œbefore_saveç­‰ç­‰äº‹ä»¶
+
+119.åœ¨Modelé‡Œé¢å®šä¹‰ä¸€ä¸ªenumçš„æ—¶å€™
+	enum room_type = {:washitsu => 1, :youshitsu => 2...}
+	ROOM_TYPE = {:washitsu => "å’Œå®¤", :youshitsu => "æ´‹å®¤"}
+	è¿™é‡Œé¢å¯¹äºroom_typeå±æ€§1å’Œ"washitsu"æ˜¯ç­‰ä»·çš„ï¼Œè·å–åˆ°çš„å€¼ä¹Ÿæ˜¯"washitsu"
+	å¯ä»¥ç”¨Model.room_typesæ¥è·å–è¿™ä¸ªenum
+120.å¯¹äºè·¯ç”±é…ç½®ï¼Œå¦‚æœæœ‰å†²çªçš„è¯ï¼Œä¼šä¼˜å…ˆè¿›å†™åœ¨å‰é¢çš„é‚£æ¡
+	FreePage.all.try(:each) do |fp|
+		get fp.key, to: 'free_pages#show'	//è¿™é‡Œå¯ä»¥é€šè¿‡request.urlæ¥æ‰¾åˆ°é‚£ä¸ªkey
+	end
+	ä¹Ÿå¯ä»¥å†™
+	get ':key', :to => 'free_pages#show'	//è¿™é‡Œæ›´ç®€å•ï¼Œä¸è¿‡ä¼šåŒ¹é…æ›´å¤šçš„ä¸çŸ¥é“æ¥æºçš„keyå§
+	ã€å‰å°free_pagesçš„æ ‡é¢˜æˆ–è®¸å¯ä»¥ç”¨jsæ¥æ”¹ã€‘
+121.åˆ¤æ–­ä¸€ä¸ªæ•°ç»„æ˜¯å¦å…¨ä¸ºç©ºçš„æ—¶å€™å¯ä»¥ç”¨arr.all?(:&blank?)(æˆ–è€…ä¼ block)ä¹Ÿå¯ä»¥arr.any?(:&present?)
+
+122.å¯¼å‡º/è¯»å–excel
 
 	Roo
 		xlsx = Roo::Excel.new(file)
@@ -368,12 +368,12 @@ p.banner_pic img {
 		p.workbook do |wb|
 			styles = ExcelUtil.get_local_product_style(wb)
 			styles = wb.styles
-			styles.fonts.first.name = "¥á¥¤¥ê¥ª"
+			styles.fonts.first.name = "ãƒ¡ã‚¤ãƒªã‚ª"
 			styles.fonts.first.sz = 11
 			#http://www.rubydoc.info/github/randym/axlsx/Axlsx%2FStyles%3Aadd_style
-			# ÕâĞ©ÊôĞÔ¶¼ÊÇÊı×Ö
+			# è¿™äº›å±æ€§éƒ½æ˜¯æ•°å­—
 			head_orange_default = styles.add_style b: true, bg_color: 'FFC000', border: {color: '000000', style: :thin  }, alignment: {vertical: :center, wrap_text: false, shrink_to_fit: true}
-			
+
 			grey_blank = styles.add_style b: true, bg_color: 'BFBFBF', alignment: {horizontal: :center, vertical: :center, wrap_text: false, shrink_to_fit: true}
 			grey_title_right = styles.add_style b: true, bg_color: 'BFBFBF', border: {color: '000000', style: :double, edges: [:bottom]    }, alignment: {horizontal: :center, vertical: :center, wrap_text: false, shrink_to_fit: true}
 			grey_title_left = styles.add_style b: true, bg_color: 'BFBFBF', border: {color: '000000', style: :double, edges: [:bottom]    }, alignment: {horizontal: :center, vertical: :center, wrap_text: false, shrink_to_fit: true}
@@ -383,14 +383,14 @@ p.banner_pic img {
 
 			border = styles.borders[styles.cellXfs[grey_title_left].borderId]
 			border.prs << Axlsx::BorderPr.new(:name => :right, :color => Axlsx::Color.new(:rgb => '000000'), :style => :thin)
-			
-			
-			
+
+
+
 			wb.add_worksheet(:name => '') do |sheet|
 				sheet.add_row([], :style => style/[style1, style2])
 				sheet.column_widths width1, width2
-				
-				# ¶³½á´°¿Ú
+
+				# å†»ç»“çª—å£
 				sheet.sheet_view do |vs|
 				  vs.pane do |pane|
 					pane.state = :frozen_split
@@ -400,7 +400,7 @@ p.banner_pic img {
 			end
 		end
 		p.serialize file_path
-		
+
 	rubyXL
 		workbook = RubyXL::Parser.parse(File.join(save_dir, file_name))
 
@@ -410,170 +410,170 @@ p.banner_pic img {
         worksheet.add_cell(index+2, 0, category.try(:code_eight))
         worksheet.add_cell(index+2, 1, category.category_name_rank_with)
       end
-      send_data workbook.stream.string, :filename => encode_file_name('µØÓò¼{Èë»áÉç?¼{ÈëÉÌÆ·ÊÂÇ°ÉêÕˆ_¥Æ¥ó¥×¥ì©`¥È.xlsx'), disposition: 'attachment'
-123.send_dataÔÚ·¢ËÍÍêÊı¾İÖ®Ç°»á°ÑÎÄ¼şËøÆğÀ´£¬¶øsend_fileÔò²»»á£¬Èç¹ûÏëÔÚ·¢ËÍÍêÎÄ¼ş¾ÍÉ¾³ı£¬ÄÇÓÃsend_dataºÃ
+      send_data workbook.stream.string, :filename => encode_file_name('åœ°åŸŸç´å…¥ä¼šç¤¾?ç´å…¥å•†å“äº‹å‰ç”³è«‹_ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ.xlsx'), disposition: 'attachment'
+123.send_dataåœ¨å‘é€å®Œæ•°æ®ä¹‹å‰ä¼šæŠŠæ–‡ä»¶é”èµ·æ¥ï¼Œè€Œsend_fileåˆ™ä¸ä¼šï¼Œå¦‚æœæƒ³åœ¨å‘é€å®Œæ–‡ä»¶å°±åˆ é™¤ï¼Œé‚£ç”¨send_dataå¥½
 	File.open(file, 'r') do |f|
 		send_data f.read...
 	end
-	
-124.ÑùÊ½¸²¸ÇµÄÓÅÏÈ¼¶
-	¼Ì³ĞÊ±£¬Ó¦ÓÃ×î½ü×æÏÈµÄÑùÊ½
-	Ö±½ÓÖ¸¶¨µÄÑùÊ½¸²¸Ç¼Ì³ĞµÄÑùÊ½
-	Ö±½ÓÖ¸¶¨µÄ·¢Éú³åÍ»Ê±È¨Öµ¸ßµÄ¸²¸ÇÈ¨ÖµµÍµÄ
-		±êÇ©Ñ¡ÔñÆ÷	1
-		ÀàÑ¡ÔñÆ÷	10
-		IDÑ¡ÔñÆ÷	100
-		ÄÚÁªÑùÊ½	1000
-		Î±ÔªËØ(:first-childµÈ)	1
-		Î±Àà(:linkµÈ)	10
-		±ÈÈç¡±#nav .current a¡±µÄÈ¨ÖµÎª100 + 10 + 1 = 111¡£
-	!important¿ÉÒÔ¿´×öÊÇÍò²»µÃÒÑµÄÊ±ºò£¬´òÆÆÉÏÊöËÄ¸ö¹æÔòµÄ¡±½ğÊÖÖ¸¡±¡£Èç¹ûÄãÒ»¶¨Òª²ÉÓÃÄ³¸öÑùÊ½ÊôĞÔ£¬¶ø²»ÈÃËü±»¸²¸ÇµÄ£¬¿ÉÒÔÔÚÊôĞÔÖµºó¼ÓÉÏ!important£¬ÒÔ¹æÔòËÄµÄÀı×ÓÎªÀı£¬¡±.byline a {color:red !important;}¡±¿ÉÒÔÇ¿ĞĞÊ¹Á´½ÓÏÔÊ¾ºìÉ«¡£´ó¶àÊıÇé¿öÏÂ¶¼¿ÉÒÔÍ¨¹ıÆäËû·½Ê½À´¿ØÖÆÑùÊ½µÄ¸²¸Ç£¬²»ÄÜÀÄÓÃ!important¡£
-	
-125.ÉÏ´«ÎÄ¼şµ½²âÊÔ·şÎñÆ÷
-	ÏÈÉÏÔ¶³Ì£¬ÓÃÔ¶³ÌµÄwinscpÁ¬
-	192.168.200.79 ÆäËûÉèÖÃ»ù±¾ÓÃÄ¬ÈÏ¾ÍºÃ
+
+124.æ ·å¼è¦†ç›–çš„ä¼˜å…ˆçº§
+	ç»§æ‰¿æ—¶ï¼Œåº”ç”¨æœ€è¿‘ç¥–å…ˆçš„æ ·å¼
+	ç›´æ¥æŒ‡å®šçš„æ ·å¼è¦†ç›–ç»§æ‰¿çš„æ ·å¼
+	ç›´æ¥æŒ‡å®šçš„å‘ç”Ÿå†²çªæ—¶æƒå€¼é«˜çš„è¦†ç›–æƒå€¼ä½çš„
+		æ ‡ç­¾é€‰æ‹©å™¨	1
+		ç±»é€‰æ‹©å™¨	10
+		IDé€‰æ‹©å™¨	100
+		å†…è”æ ·å¼	1000
+		ä¼ªå…ƒç´ (:first-childç­‰)	1
+		ä¼ªç±»(:linkç­‰)	10
+		æ¯”å¦‚â€#nav .current aâ€çš„æƒå€¼ä¸º100 + 10 + 1 = 111ã€‚
+	!importantå¯ä»¥çœ‹åšæ˜¯ä¸‡ä¸å¾—å·²çš„æ—¶å€™ï¼Œæ‰“ç ´ä¸Šè¿°å››ä¸ªè§„åˆ™çš„â€é‡‘æ‰‹æŒ‡â€ã€‚å¦‚æœä½ ä¸€å®šè¦é‡‡ç”¨æŸä¸ªæ ·å¼å±æ€§ï¼Œè€Œä¸è®©å®ƒè¢«è¦†ç›–çš„ï¼Œå¯ä»¥åœ¨å±æ€§å€¼ååŠ ä¸Š!importantï¼Œä»¥è§„åˆ™å››çš„ä¾‹å­ä¸ºä¾‹ï¼Œâ€.byline a {color:red !important;}â€å¯ä»¥å¼ºè¡Œä½¿é“¾æ¥æ˜¾ç¤ºçº¢è‰²ã€‚å¤§å¤šæ•°æƒ…å†µä¸‹éƒ½å¯ä»¥é€šè¿‡å…¶ä»–æ–¹å¼æ¥æ§åˆ¶æ ·å¼çš„è¦†ç›–ï¼Œä¸èƒ½æ»¥ç”¨!importantã€‚
+
+125.ä¸Šä¼ æ–‡ä»¶åˆ°æµ‹è¯•æœåŠ¡å™¨
+	å…ˆä¸Šè¿œç¨‹ï¼Œç”¨è¿œç¨‹çš„winscpè¿
+	192.168.200.79 å…¶ä»–è®¾ç½®åŸºæœ¬ç”¨é»˜è®¤å°±å¥½
 	ec/123456
-126.HTML5¹æ·¶×Ô¶¨ÒåÌØĞÔĞèÒª¼ÓÉÏdata-Ç°×º
+126.HTML5è§„èŒƒè‡ªå®šä¹‰ç‰¹æ€§éœ€è¦åŠ ä¸Šdata-å‰ç¼€
 
 http://blog.csdn.net/sunset108/article/details/48956101
-127.class ÖĞinclude¿ÉÒÔ½«moduleÖĞµÄ·½·¨±äÎªÊµÀı·½·¨£¬extend¿ÉÒÔ½«moduleÖĞµÄ·½·¨±äÎªÀà·½·¨
-	moduleÖĞ¿ÉÒÔ¶¨Òåself.extended(base)¿ÉÒÔÔÚ±»extendedµÄÊ±ºòÖ´ĞĞbaseÊÇextendµÄÀà
-					self.included(base)ÏàÍ¬
-128.Í¬Ê±ÒıÈëÊµÀı·½·¨ºÍÀà·½·¨
-	moduleÀïÃæĞ´module
-	¿ÉÒÔinclude module::module
-	Ò²¿ÉÒÔself.included(base)
+127.class ä¸­includeå¯ä»¥å°†moduleä¸­çš„æ–¹æ³•å˜ä¸ºå®ä¾‹æ–¹æ³•ï¼Œextendå¯ä»¥å°†moduleä¸­çš„æ–¹æ³•å˜ä¸ºç±»æ–¹æ³•
+	moduleä¸­å¯ä»¥å®šä¹‰self.extended(base)å¯ä»¥åœ¨è¢«extendedçš„æ—¶å€™æ‰§è¡Œbaseæ˜¯extendçš„ç±»
+					self.included(base)ç›¸åŒ
+128.åŒæ—¶å¼•å…¥å®ä¾‹æ–¹æ³•å’Œç±»æ–¹æ³•
+	moduleé‡Œé¢å†™module
+	å¯ä»¥include module::module
+	ä¹Ÿå¯ä»¥self.included(base)
 			base.extend ClassMethods
 			base.send :include, InstanceMthods
 		  end
-129.¿ÉÒÔÓÃincludeÊµÏÖmix-in(¶àÖØ¼Ì³Ğ)
-130.includeÆäËûÎÄ¼şÀïÃæµÄmoduleµÄÊ±ºò³öÏÖuninitialize
+129.å¯ä»¥ç”¨includeå®ç°mix-in(å¤šé‡ç»§æ‰¿)
+130.includeå…¶ä»–æ–‡ä»¶é‡Œé¢çš„moduleçš„æ—¶å€™å‡ºç°uninitialize
 	require_relative 'file_name'
-	moduleÓ¦¸ÃºÍÎÄ¼şÃûÍ³Ò» module MyMod => my_mod.rb
-131.Ê¹ÓÃActiveSupport::Concern(ĞèÒªrequire 'active_support')
+	moduleåº”è¯¥å’Œæ–‡ä»¶åç»Ÿä¸€ module MyMod => my_mod.rb
+131.ä½¿ç”¨ActiveSupport::Concern(éœ€è¦require 'active_support')
 	module MM
 		extend ActiveSupport::Concern
-		included do 
-			# ¿ÉÒÔÔÚÕâÀïÃæĞ´Àà·½·¨
+		included do
+			# å¯ä»¥åœ¨è¿™é‡Œé¢å†™ç±»æ–¹æ³•
 			extend xxx
-			# Ò²¿ÉÒÔ 
-			class_eval do 
-				def self.method 
-					
+			# ä¹Ÿå¯ä»¥
+			class_eval do
+				def self.method
+
 				end
 			end
 		end
 	end
-132.bootstrapµÄjsºÍcss¿ÉÒÔ¶¨ÖÆ£¬±È·½ËµÖ»ÏëÊ¹ÓÃdatetimepicker Ö»ÒªdropdownºÍsprites£¬²»ÓÃÏÂÔØÕû¸öµÄbootstrap
-133.mojinizer¿ÉÒÔÅĞ¶Ï¡¢×ª»»ÈÕÎÄµÄÈ«½Ç°ë½Ç
-134.column = "str"¿ÉÒÔÆ¥Åä³öÊı¾İ¿âÀïÃæÖµÎª"str "µÄ¼ÇÂ¼
-135.µ¼ÈëcsvµÄÊ±ºò£¬Èç¹ûÒ»ÁĞÖ»ÓĞÒ»¸ö¶ººÅ£¬ÄÇËüµÄÖµÎªnil¶ø²»ÊÇ¿Õ×Ö·û´®
-136.jsÖĞÊ¹ÓÃÕıÔò×öÆ¥ÅäÊ± /regexp/g.exec("str") »á·µ»ØÒ»´ÎÆ¥ÅäµÄ½á¹û['Æ¥Åäµ½µÄ´®', '·Ö×é', index: in, input: 'str']
-	Èç¹û´øÁËg²ÎÊı,µÚ¶ş´ÎÆ¥ÅäÊ±ºò»á´ÓÉÏ´ÎÆ¥Åä½áÊøµÄµØ·½¼ÌĞøÖ´ĞĞ(Õâ¸ö¿ÉÒÔÓÃÀ´×öÑ­»·Æ¥Åä)
-	/reg/.test()·µ»ØÊÇ·ñÆ¥Åä
-	'str'.search(/reg/)·µ»ØÆ¥ÅäµÄÎ»ÖÃÎ´Æ¥Åä·µ»Ø-1      (str.search(/reg/) !== -1)¿ÉÒÔÏàµ±ÓÚtest
-	¶ÔÓÚreplace¿ÉÒÔÓÃreplace(/reg/g, 'str')´ïµ½È«¾ÖÌæ»»
-	  µÚ¶ş¸ö²ÎÊıÒ²¿ÉÒÔÊÇº¯Êıreplace(/reg/g, function(match, $1, $2){})//matchÊÇÆ¥ÅäÄÚÈİ£¬ºóÃæÊÇ·Ö×é
-	  
-137.htmlµÄ±í¸ñÀïÃæµÄinline-block£¬Èç¹û²»ÏëÈÃ±»Æä¼·µÃ»»ĞĞ£¬¿ÉÒÔÈ¥µôtdµÄ¿í¶ÈÉèÖÃ£¬Ò²¿ÉÒÔÔÚtdÀïÃæĞ´ÉÏ nowrap
-138.Í¼Æ¬¼ÓÔØÍê³Éºó»ñÈ¡¸ß¶ÈÊ²Ã´µÄ
+132.bootstrapçš„jså’Œcsså¯ä»¥å®šåˆ¶ï¼Œæ¯”æ–¹è¯´åªæƒ³ä½¿ç”¨datetimepicker åªè¦dropdownå’Œspritesï¼Œä¸ç”¨ä¸‹è½½æ•´ä¸ªçš„bootstrap
+133.mojinizerå¯ä»¥åˆ¤æ–­ã€è½¬æ¢æ—¥æ–‡çš„å…¨è§’åŠè§’
+134.column = "str"å¯ä»¥åŒ¹é…å‡ºæ•°æ®åº“é‡Œé¢å€¼ä¸º"str "çš„è®°å½•
+135.å¯¼å…¥csvçš„æ—¶å€™ï¼Œå¦‚æœä¸€åˆ—åªæœ‰ä¸€ä¸ªé€—å·ï¼Œé‚£å®ƒçš„å€¼ä¸ºnilè€Œä¸æ˜¯ç©ºå­—ç¬¦ä¸²
+136.jsä¸­ä½¿ç”¨æ­£åˆ™åšåŒ¹é…æ—¶ /regexp/g.exec("str") ä¼šè¿”å›ä¸€æ¬¡åŒ¹é…çš„ç»“æœ['åŒ¹é…åˆ°çš„ä¸²', 'åˆ†ç»„', index: in, input: 'str']
+	å¦‚æœå¸¦äº†gå‚æ•°,ç¬¬äºŒæ¬¡åŒ¹é…æ—¶å€™ä¼šä»ä¸Šæ¬¡åŒ¹é…ç»“æŸçš„åœ°æ–¹ç»§ç»­æ‰§è¡Œ(è¿™ä¸ªå¯ä»¥ç”¨æ¥åšå¾ªç¯åŒ¹é…)
+	/reg/.test()è¿”å›æ˜¯å¦åŒ¹é…
+	'str'.search(/reg/)è¿”å›åŒ¹é…çš„ä½ç½®æœªåŒ¹é…è¿”å›-1      (str.search(/reg/) !== -1)å¯ä»¥ç›¸å½“äºtest
+	å¯¹äºreplaceå¯ä»¥ç”¨replace(/reg/g, 'str')è¾¾åˆ°å…¨å±€æ›¿æ¢
+	  ç¬¬äºŒä¸ªå‚æ•°ä¹Ÿå¯ä»¥æ˜¯å‡½æ•°replace(/reg/g, function(match, $1, $2){})//matchæ˜¯åŒ¹é…å†…å®¹ï¼Œåé¢æ˜¯åˆ†ç»„
+
+137.htmlçš„è¡¨æ ¼é‡Œé¢çš„inline-blockï¼Œå¦‚æœä¸æƒ³è®©è¢«å…¶æŒ¤å¾—æ¢è¡Œï¼Œå¯ä»¥å»æ‰tdçš„å®½åº¦è®¾ç½®ï¼Œä¹Ÿå¯ä»¥åœ¨tdé‡Œé¢å†™ä¸Š nowrap
+138.å›¾ç‰‡åŠ è½½å®Œæˆåè·å–é«˜åº¦ä»€ä¹ˆçš„
 	img.onload = img.readstatechange = function(){
-		// imgÊÇjs¶ÔÏóµÄÍ¼Æ¬£¬Ò²¿ÉÒÔÊÇÍ¼Æ¬°´Å¥
+		// imgæ˜¯jså¯¹è±¡çš„å›¾ç‰‡ï¼Œä¹Ÿå¯ä»¥æ˜¯å›¾ç‰‡æŒ‰é’®
 	}
-139.Èç¹ûÏëÈÃÄ³Ò»¸ödivÓĞ¹ö¶¯Ìõ£¬ÉèÖÃÒ»¸ö¹Ì¶¨µÄ¸ß¶È£¬È»ºó overflow-y: auto
+139.å¦‚æœæƒ³è®©æŸä¸€ä¸ªdivæœ‰æ»šåŠ¨æ¡ï¼Œè®¾ç½®ä¸€ä¸ªå›ºå®šçš„é«˜åº¦ï¼Œç„¶å overflow-y: auto
 140.rails joins references includes
-	(µ±includesµÄÊ±ºò)has_many»á×Ô¶¯left out join£¬belongsµÄ²¢ÇÒÓÃµ½ËüµÄ±íµÄ×Ö¶ÎµÄÊ±ºò²ÅÒªreferences
-	¶ÔÓÚleft joinºÍinner join Èç¹û±íÖĞ¹ØÁªidÎªnull£¬inner joinµÄÊ±ºò²»»á²éÑ¯³ö´Ë¼ÇÂ¼£¬Èô²»Îª¿Õ£¬¹ØÁªµÄ¶ÔÏó²»´æÔÚinner joinºÍleft joinÊÇÒ»ÑùµÄ
-141.jqÓÃeachµÄÊ±ºò£¬function()ÖĞ´«Ò»¸öÖµÊÇindex£¬´«Á½¸öÖµÊÇjs¶ÔÏó+index£¬ÔÚfunctionÖĞÓÃ$(this)±íÊ¾±éÀú³öÀ´µÄjq¶ÔÏó
-142.ecÀïÃæÓĞ¸öÆæ¹ÖµÄÎÊÌâ£¬¶à¶Ô¶à¹ØÁª²»ÉÏhas_many»á±¨´í uninitialize constant xxx::xxx name error
-	customer_role_emergency_news => emergency_new_customer_roles¾Í¿ÉÒÔ
-143.ActiveRecord.create()¿ÉÒÔÖ±½Ó´´½¨¼ÇÂ¼
-	ActiveRecord.destroy_all('sql = ?', value)¿ÉÒÔÉ¾³ı
-144.has_many»òÕßbelongs_toµÄÊ±ºò£¬belongs_to :all_cancel_email_template, :foreign_key => :all_cancel_email_template_id, :class_name => 'MailTemplate' # class_nameĞèÒªÇø·Ö´óĞ¡Ğ´
-	all_cancel_email_templateÊµ¼ÊÉÏÊÇMailTemplate
-	
-145.¶ÔÓÚjsÖĞµÄ¶¯»­Ğ§¹û£¬¿ÉÒÔÓÃ$(selector).stop(stopAll, goToEnd)À´Í£Ö¹£¬slideDown/animateµÈµÈ¶¼¿ÉÒÔÍ£Ö¹
-	¶ÔÓÚÏÂÀ­²Ëµ¥ÖĞµÄ¶¯»­£¬hoverµÄÊ±ºòÏÔÊ¾£¬houtµÄÊ±ºòÏûÊ§£¬Èç¹û¶¯×÷Ì«¿ì²¢ÇÒÖØ¸´£¬»áÔì³É¼´Ê¹Í£ÏÂÁËÊó±êµÄÒÆ¶¯£¬²Ëµ¥Ò²»áÖØ¸´ÏÔÊ¾->Òş²Ø->ÏÔÊ¾
-	Õâ¿ÉÒÔÓÃstop(true, true),Çå³ıÎ´Íê³ÉµÄ¶¯»­£¬Á¢¼´Íê³Éµ±Ç°¶¯»­
-146.page-break-inside:avoid;¿ÉÒÔÉèÖÃhtml·ÖÒ³µã£¬¸øÄÇ¸½½üµÄ±êÇ©ÉèÖÃ´ËcssÊôĞÔ¼´¿É
-	ÔÚµ¼³öpdfµÄÊ±ºòÌØ±ğºÃÓÃ
+	(å½“includesçš„æ—¶å€™)has_manyä¼šè‡ªåŠ¨left out joinï¼Œbelongsçš„å¹¶ä¸”ç”¨åˆ°å®ƒçš„è¡¨çš„å­—æ®µçš„æ—¶å€™æ‰è¦references
+	å¯¹äºleft joinå’Œinner join å¦‚æœè¡¨ä¸­å…³è”idä¸ºnullï¼Œinner joinçš„æ—¶å€™ä¸ä¼šæŸ¥è¯¢å‡ºæ­¤è®°å½•ï¼Œè‹¥ä¸ä¸ºç©ºï¼Œå…³è”çš„å¯¹è±¡ä¸å­˜åœ¨inner joinå’Œleft joinæ˜¯ä¸€æ ·çš„
+141.jqç”¨eachçš„æ—¶å€™ï¼Œfunction()ä¸­ä¼ ä¸€ä¸ªå€¼æ˜¯indexï¼Œä¼ ä¸¤ä¸ªå€¼æ˜¯jså¯¹è±¡+indexï¼Œåœ¨functionä¸­ç”¨$(this)è¡¨ç¤ºéå†å‡ºæ¥çš„jqå¯¹è±¡
+142.ecé‡Œé¢æœ‰ä¸ªå¥‡æ€ªçš„é—®é¢˜ï¼Œå¤šå¯¹å¤šå…³è”ä¸ä¸Šhas_manyä¼šæŠ¥é”™ uninitialize constant xxx::xxx name error
+	customer_role_emergency_news => emergency_new_customer_roleså°±å¯ä»¥
+143.ActiveRecord.create()å¯ä»¥ç›´æ¥åˆ›å»ºè®°å½•
+	ActiveRecord.destroy_all('sql = ?', value)å¯ä»¥åˆ é™¤
+144.has_manyæˆ–è€…belongs_toçš„æ—¶å€™ï¼Œbelongs_to :all_cancel_email_template, :foreign_key => :all_cancel_email_template_id, :class_name => 'MailTemplate' # class_nameéœ€è¦åŒºåˆ†å¤§å°å†™
+	all_cancel_email_templateå®é™…ä¸Šæ˜¯MailTemplate
+
+145.å¯¹äºjsä¸­çš„åŠ¨ç”»æ•ˆæœï¼Œå¯ä»¥ç”¨$(selector).stop(stopAll, goToEnd)æ¥åœæ­¢ï¼ŒslideDown/animateç­‰ç­‰éƒ½å¯ä»¥åœæ­¢
+	å¯¹äºä¸‹æ‹‰èœå•ä¸­çš„åŠ¨ç”»ï¼Œhoverçš„æ—¶å€™æ˜¾ç¤ºï¼Œhoutçš„æ—¶å€™æ¶ˆå¤±ï¼Œå¦‚æœåŠ¨ä½œå¤ªå¿«å¹¶ä¸”é‡å¤ï¼Œä¼šé€ æˆå³ä½¿åœä¸‹äº†é¼ æ ‡çš„ç§»åŠ¨ï¼Œèœå•ä¹Ÿä¼šé‡å¤æ˜¾ç¤º->éšè—->æ˜¾ç¤º
+	è¿™å¯ä»¥ç”¨stop(true, true),æ¸…é™¤æœªå®Œæˆçš„åŠ¨ç”»ï¼Œç«‹å³å®Œæˆå½“å‰åŠ¨ç”»
+146.page-break-inside:avoid;å¯ä»¥è®¾ç½®htmlåˆ†é¡µç‚¹ï¼Œç»™é‚£é™„è¿‘çš„æ ‡ç­¾è®¾ç½®æ­¤csså±æ€§å³å¯
+	åœ¨å¯¼å‡ºpdfçš„æ—¶å€™ç‰¹åˆ«å¥½ç”¨
 147.@coma.blank? && (
       flash[:error] = I18n.t(:no_premission)
       redirect_to restaurant_restaurant_comas_path
       return
       )
-	Ìæ´úif
-148.ÔÚÌîĞ´±íµ¥µÄÊ±ºòÓÃ»Ø³µÌá½»£¬»á´¥·¢onchange => submit,²»»á´¥·¢blur£¬µã»÷submitµÄÊ±ºòÊÇonchange => blur => submit
+	æ›¿ä»£if
+148.åœ¨å¡«å†™è¡¨å•çš„æ—¶å€™ç”¨å›è½¦æäº¤ï¼Œä¼šè§¦å‘onchange => submit,ä¸ä¼šè§¦å‘blurï¼Œç‚¹å‡»submitçš„æ—¶å€™æ˜¯onchange => blur => submit
 
-149.paranoia×ö¼ÙÉ¾³ıµÄÊ±ºò£¬Èç¹ûĞèÒªËÑË÷ÒÑ¾­É¾³ıµÄÊı¾İ¿ÉÒÔÓÃModel.with_deleted.¹ØÁªµÄÊı¾İ×ö²éÑ¯µÄÊ±ºò£¬belongs_to :model, ->{unscope(where: :deleted)/with_deleted},ÁíÍâ²éÑ¯µÄÊ±ºòÒªÓÃµ½distinct.joins("")ÊÖ¶¯Ğ´joins£¬²»°ÑdeletedĞ´½øÈ¥¾ÍºÃÁË£¬ÆÕÍ¨µÄjoins(:model)ÊÇ»áÓĞdeletedµÄ
-150.find_each(Ä¬ÈÏbatch_sizeÊÇ1000)ºÍfind_in_batchesÓÃÓÚ´óÁ¿¼ÇÂ¼µÄÅú´¦Àí£¬ÊÊÓÃÓÚÊıÁ¿ºÜ´ó²»ÊÊºÏÒ»´ÎĞÔ±£´æÔÚÄÚ´æÖĞ£¬¿ÉÒÔ´¦ÀíÄ£ĞÍÀàºÍ¹ØÏµ
-	¿ÉÒÔÖ¸¶¨(:start => [, :finish => 2.0.0°æ±¾ÎŞ], :batch_size => ) start°´Ö÷¼ü
-	µÚ¶ş¸ö·½·¨find_in_batches(start: , batch_size: ) do |arr|³öÀ´µÄÊÇarray ,
-151.²éÑ¯Ê±ºò£¬Ê¹ÓÃÎÊºÅ(?)¶ø²»ÊÇÖ±½ÓÌî³ä#{params}£¬¿ÉÒÔ·ÀÖ¹×¢Èë¹¥»÷
-	railsÄÚÖÃÕë¶ÔÌØÊâsql×Ö·ûµÄ¹ıÂËÆ÷ÓÃÓÚ×ªÒå ', ", nullºÍ»»ĞĞ·û
-	
+149.paranoiaåšå‡åˆ é™¤çš„æ—¶å€™ï¼Œå¦‚æœéœ€è¦æœç´¢å·²ç»åˆ é™¤çš„æ•°æ®å¯ä»¥ç”¨Model.with_deleted.å…³è”çš„æ•°æ®åšæŸ¥è¯¢çš„æ—¶å€™ï¼Œbelongs_to :model, ->{unscope(where: :deleted)/with_deleted},å¦å¤–æŸ¥è¯¢çš„æ—¶å€™è¦ç”¨åˆ°distinct.joins("")æ‰‹åŠ¨å†™joinsï¼Œä¸æŠŠdeletedå†™è¿›å»å°±å¥½äº†ï¼Œæ™®é€šçš„joins(:model)æ˜¯ä¼šæœ‰deletedçš„
+150.find_each(é»˜è®¤batch_sizeæ˜¯1000)å’Œfind_in_batchesç”¨äºå¤§é‡è®°å½•çš„æ‰¹å¤„ç†ï¼Œé€‚ç”¨äºæ•°é‡å¾ˆå¤§ä¸é€‚åˆä¸€æ¬¡æ€§ä¿å­˜åœ¨å†…å­˜ä¸­ï¼Œå¯ä»¥å¤„ç†æ¨¡å‹ç±»å’Œå…³ç³»
+	å¯ä»¥æŒ‡å®š(:start => [, :finish => 2.0.0ç‰ˆæœ¬æ— ], :batch_size => ) startæŒ‰ä¸»é”®
+	ç¬¬äºŒä¸ªæ–¹æ³•find_in_batches(start: , batch_size: ) do |arr|å‡ºæ¥çš„æ˜¯array ,
+151.æŸ¥è¯¢æ—¶å€™ï¼Œä½¿ç”¨é—®å·(?)è€Œä¸æ˜¯ç›´æ¥å¡«å……#{params}ï¼Œå¯ä»¥é˜²æ­¢æ³¨å…¥æ”»å‡»
+	railså†…ç½®é’ˆå¯¹ç‰¹æ®Šsqlå­—ç¬¦çš„è¿‡æ»¤å™¨ç”¨äºè½¬ä¹‰ ', ", nullå’Œæ¢è¡Œç¬¦
+
 152.Time/Date/DateTime
-	TimeÖ»ÄÜÊ¹ÓÃ1970ÄêÒÔºóµÄÈÕÆÚ£¬°üÀ¨Ê±·ÖÃë
-	Date¿ÉÒÔÊ¹ÓÃ¸üÒÔÇ°µÄÈÕÆÚµ«²»°üÀ¨Ê±·ÖÃë ĞèÒªrequire "date"
-	DateTime×ÛºÏÁËTimeºÍDate ĞèÒªrequire "date"
-	
-	Ïà»¥×ª»¯ Time.now.to_date.to_datetime.to_time
+	Timeåªèƒ½ä½¿ç”¨1970å¹´ä»¥åçš„æ—¥æœŸï¼ŒåŒ…æ‹¬æ—¶åˆ†ç§’
+	Dateå¯ä»¥ä½¿ç”¨æ›´ä»¥å‰çš„æ—¥æœŸä½†ä¸åŒ…æ‹¬æ—¶åˆ†ç§’ éœ€è¦require "date"
+	DateTimeç»¼åˆäº†Timeå’ŒDate éœ€è¦require "date"
+
+	ç›¸äº’è½¬åŒ– Time.now.to_date.to_datetime.to_time
 	Time.new(year, month=nil, day=nil, hour=nil, min=nil, sec=nil, utc_offset=nil)
-	
-	%a - The abbreviated weekday name (``Sun'')-ĞÇÆÚµÄËõĞ´(``Sun'')
-	%A - The full weekday name (``Sunday'')-ĞÇÆÚ (``Sunday'')
-	%b - The abbreviated month name (``Jan'')-ÔÂ·İµÄËõĞ´ (``Jan'')
-	%B - The full month name (``January'')-ÔÂ·İ(``January'')
-	%c - The preferred local date and time representation-±¾µØÊ±¼äµÄÏÔÊ¾¸ñÊ½
-	%d - Day of the month (01..31)-ÔÂ·İÖĞµÄ¼¸ºÅ(01..31)
-	%H - Hour of the day, 24-hour clock (00..23)-24Ğ¡Ê±ÖÆÖĞµÄĞ¡Ê±(00..23)
-	%I - Hour of the day, 12-hour clock (01..12)-12Ğ¡Ê±ÖÆÖĞµÄĞ¡Ê±(01..12)
-	%j - Day of the year (001..366)-Ò»ÄêÖĞµÄµÚ¼¸Ìì (001..366)
-	%m - Month of the year (01..12)-Ò»ÄêÖĞµÄµÚ¼¸¸öÔÂ(01..12)
-	%M - Minute of the hour (00..59)-·ÖÖÓ (00..59)
-	%p - Meridian indicator (``AM'' or ``PM'')-ÉÏÎç»¹ÊÇÏÂÎç(``AM'' or ``PM'')
-	%S - Second of the minute (00..60)-Ãë(00..60)
-	%U - Week number of the current year, starting with the first Sunday as the first day of the first week (00..53)Ò»ÄêÖĞµÄµÚ¼¸¸öĞÇÆÚ£¬´ÓµÚÒ»¸öĞÇÆÚÌì¿ªÊ¼Ëã¡£
-	%W - Week number of the current year, starting with the first Monday as the first day of the first week (00..53)Ò»ÄêÖĞµÄµÚ¼¸¸öĞÇÆÚ£¬´ÓµÚÒ»¸öĞÇÆÚÒ»¿ªÊ¼Ëã¡£
-	%w - Day of the week (Sunday is 0, 0..6)Ò»¸öĞÇÆÚÖĞµÄµÚ¼¸Ìì(Sunday is 0, 0..6)
-	%x - Preferred representation for the date alone, no timeÖ»ÏÔÊ¾ÈÕÆÚ£¬Ã»ÓĞ¾ßÌåÊ±¼ä
-	%X - Preferred representation for the time alone, no dateÖ»ÏÔÊ¾Ê±¼ä£¬Ã»ÓĞÈÕÆÚ
-	%y - Year without a century (00..99)²»ÏÔÊ¾Äê·İÖĞµÄÇ°Á½Î»(00..99)
-	%Y - Year with centuryµ±Ç°Äê·İ
-	%Z - Time zone nameÊ±¼äÓò
 
-	×÷Õß£ºkamionayuki
-	Á´½Ó£ºhttp://www.jianshu.com/p/d89665aded19
-	íÔ´£º¼òÊé
-	Öø×÷È¨¹é×÷ÕßËùÓĞ¡£ÉÌÒµ×ªÔØÇëÁªÏµ×÷Õß»ñµÃÊÚÈ¨£¬·ÇÉÌÒµ×ªÔØÇë×¢Ã÷³ö´¦¡£
-	
-153.ÔÚÓÃµ¯´°µÄÊ±ºò£¬ÀïÃæÈç¹ûÔÙÓÃÓĞµ¯´°µÄ²å¼ş£¬Èçdatetimepicker»òÕßcolorpicker£¬¿ÉÄÜ»á±»ÕÚµ²×¡£¬ÒòÎªµ¯´°¿ÉÄÜÓÃÁËoverflowÊôĞÔ£¬È¥µôoverflowÓÖ»áÓĞÎÊÌâ
+	%a - The abbreviated weekday name (``Sun'')-æ˜ŸæœŸçš„ç¼©å†™(``Sun'')
+	%A - The full weekday name (``Sunday'')-æ˜ŸæœŸ (``Sunday'')
+	%b - The abbreviated month name (``Jan'')-æœˆä»½çš„ç¼©å†™ (``Jan'')
+	%B - The full month name (``January'')-æœˆä»½(``January'')
+	%c - The preferred local date and time representation-æœ¬åœ°æ—¶é—´çš„æ˜¾ç¤ºæ ¼å¼
+	%d - Day of the month (01..31)-æœˆä»½ä¸­çš„å‡ å·(01..31)
+	%H - Hour of the day, 24-hour clock (00..23)-24å°æ—¶åˆ¶ä¸­çš„å°æ—¶(00..23)
+	%I - Hour of the day, 12-hour clock (01..12)-12å°æ—¶åˆ¶ä¸­çš„å°æ—¶(01..12)
+	%j - Day of the year (001..366)-ä¸€å¹´ä¸­çš„ç¬¬å‡ å¤© (001..366)
+	%m - Month of the year (01..12)-ä¸€å¹´ä¸­çš„ç¬¬å‡ ä¸ªæœˆ(01..12)
+	%M - Minute of the hour (00..59)-åˆ†é’Ÿ (00..59)
+	%p - Meridian indicator (``AM'' or ``PM'')-ä¸Šåˆè¿˜æ˜¯ä¸‹åˆ(``AM'' or ``PM'')
+	%S - Second of the minute (00..60)-ç§’(00..60)
+	%U - Week number of the current year, starting with the first Sunday as the first day of the first week (00..53)ä¸€å¹´ä¸­çš„ç¬¬å‡ ä¸ªæ˜ŸæœŸï¼Œä»ç¬¬ä¸€ä¸ªæ˜ŸæœŸå¤©å¼€å§‹ç®—ã€‚
+	%W - Week number of the current year, starting with the first Monday as the first day of the first week (00..53)ä¸€å¹´ä¸­çš„ç¬¬å‡ ä¸ªæ˜ŸæœŸï¼Œä»ç¬¬ä¸€ä¸ªæ˜ŸæœŸä¸€å¼€å§‹ç®—ã€‚
+	%w - Day of the week (Sunday is 0, 0..6)ä¸€ä¸ªæ˜ŸæœŸä¸­çš„ç¬¬å‡ å¤©(Sunday is 0, 0..6)
+	%x - Preferred representation for the date alone, no timeåªæ˜¾ç¤ºæ—¥æœŸï¼Œæ²¡æœ‰å…·ä½“æ—¶é—´
+	%X - Preferred representation for the time alone, no dateåªæ˜¾ç¤ºæ—¶é—´ï¼Œæ²¡æœ‰æ—¥æœŸ
+	%y - Year without a century (00..99)ä¸æ˜¾ç¤ºå¹´ä»½ä¸­çš„å‰ä¸¤ä½(00..99)
+	%Y - Year with centuryå½“å‰å¹´ä»½
+	%Z - Time zone nameæ—¶é—´åŸŸ
 
-154.Õë¶ÔieÖĞreadonlyÒ²»áÓĞonfocusµÄÉÁË¸¿ò£¬Ê¹ÓÃunselectable="on"¿ÉÒÔ½â¾ö£¬ÎÊÌâÀ´×Ô¼ºitsµÄ¡¾µã»÷inputµ¯³ö²Ëµ¥¿ÉÒÔÑ¡Ôñ¡¿
+	ä½œè€…ï¼škamionayuki
+	é“¾æ¥ï¼šhttp://www.jianshu.com/p/d89665aded19
+	ä¾†æºï¼šç®€ä¹¦
+	è‘—ä½œæƒå½’ä½œè€…æ‰€æœ‰ã€‚å•†ä¸šè½¬è½½è¯·è”ç³»ä½œè€…è·å¾—æˆæƒï¼Œéå•†ä¸šè½¬è½½è¯·æ³¨æ˜å‡ºå¤„ã€‚
 
-155.migrate add_column ÏëÊ¹ÓÃ±Èint¸üĞ¡µÄint ¿ÉÒÔÓÃlimit
+153.åœ¨ç”¨å¼¹çª—çš„æ—¶å€™ï¼Œé‡Œé¢å¦‚æœå†ç”¨æœ‰å¼¹çª—çš„æ’ä»¶ï¼Œå¦‚datetimepickeræˆ–è€…colorpickerï¼Œå¯èƒ½ä¼šè¢«é®æŒ¡ä½ï¼Œå› ä¸ºå¼¹çª—å¯èƒ½ç”¨äº†overflowå±æ€§ï¼Œå»æ‰overflowåˆä¼šæœ‰é—®é¢˜
+
+154.é’ˆå¯¹ieä¸­readonlyä¹Ÿä¼šæœ‰onfocusçš„é—ªçƒæ¡†ï¼Œä½¿ç”¨unselectable="on"å¯ä»¥è§£å†³ï¼Œé—®é¢˜æ¥è‡ªå·±itsçš„ã€ç‚¹å‡»inputå¼¹å‡ºèœå•å¯ä»¥é€‰æ‹©ã€‘
+
+155.migrate add_column æƒ³ä½¿ç”¨æ¯”intæ›´å°çš„int å¯ä»¥ç”¨limit
 
 156. Could not find rake-10.0.3 in any of the sources   => bundle install --path vendor/cache
 
-157.byteslice(start_pos, len)¿ÉÒÔ°´byte½ØÈ¡×Ö·û´®
-	²»¹ı²»Í¬µÄ±àÂë¶Ôºº×ÖµÄbyteÊı²»Í¬£¬½ØÈ¡»áÓĞÎÊÌâ
-	ÔÚutf-8ÏµÍ³ÖĞ£¬¿ÉÒÔ¶Ô×Ö·û´®ÏÈ×ªÂë½ØÈ¡£¬È»ºóÔÙ×ª»»³Éutf-8 str.encode('sjis').byteslice(statr_po, len).encode('utf-8')
-	ÔÚ¶ÁÈ¡ÈÕÎÄÎÄ¼şµÄÊ±ºòFile.open(path, "r:sjis:sjis") µÚÒ»¸öÊÇ°ÑÎÄ¼şµÄ±àÂëÊäÈë½øÈ¥£¬¸æÖªÈçºÎ½âÎö£¬µÚ¶ş¸ösjisÊÇ»ñÈ¡ÖµµÄÊ±ºòÒªsjis±àÂëµÄÖµ
-	ÕâÊ±ºò¶ÁÈ¡µ½µÄÊÇsjis±àÂë£¬×öÍê²Ù×÷Ö®ºó»¹Òª×öÆäËûµÄ²Ù×÷¿ÉÒÔ×ª»»³Éencoding('utf-8')
-	
-158.ÒªÑĞ¾¿Ò»ÏÂrails consoleµÄÓÃ·¨
+157.byteslice(start_pos, len)å¯ä»¥æŒ‰byteæˆªå–å­—ç¬¦ä¸²
+	ä¸è¿‡ä¸åŒçš„ç¼–ç å¯¹æ±‰å­—çš„byteæ•°ä¸åŒï¼Œæˆªå–ä¼šæœ‰é—®é¢˜
+	åœ¨utf-8ç³»ç»Ÿä¸­ï¼Œå¯ä»¥å¯¹å­—ç¬¦ä¸²å…ˆè½¬ç æˆªå–ï¼Œç„¶åå†è½¬æ¢æˆutf-8 str.encode('sjis').byteslice(statr_po, len).encode('utf-8')
+	åœ¨è¯»å–æ—¥æ–‡æ–‡ä»¶çš„æ—¶å€™File.open(path, "r:sjis:sjis") ç¬¬ä¸€ä¸ªæ˜¯æŠŠæ–‡ä»¶çš„ç¼–ç è¾“å…¥è¿›å»ï¼Œå‘ŠçŸ¥å¦‚ä½•è§£æï¼Œç¬¬äºŒä¸ªsjisæ˜¯è·å–å€¼çš„æ—¶å€™è¦sjisç¼–ç çš„å€¼
+	è¿™æ—¶å€™è¯»å–åˆ°çš„æ˜¯sjisç¼–ç ï¼Œåšå®Œæ“ä½œä¹‹åè¿˜è¦åšå…¶ä»–çš„æ“ä½œå¯ä»¥è½¬æ¢æˆencoding('utf-8')
 
-159.rubymine ÀïÃæµÄexernal libraries ÓÃµÄruby°æ±¾¿ÉÒÔÔÚsettingsÀïÃæÉèÖÃ ruby sdk and gems
+158.è¦ç ”ç©¶ä¸€ä¸‹rails consoleçš„ç”¨æ³•
 
-160.railsÏîÄ¿³öÏÖ TypeError: ¶ÔÏó²»Ö§³Ö´ËÊôĞÔ»ò·½·¨
+159.rubymine é‡Œé¢çš„exernal libraries ç”¨çš„rubyç‰ˆæœ¬å¯ä»¥åœ¨settingsé‡Œé¢è®¾ç½® ruby sdk and gems
+
+160.railsé¡¹ç›®å‡ºç° TypeError: å¯¹è±¡ä¸æ”¯æŒæ­¤å±æ€§æˆ–æ–¹æ³•
 	gemfile.lock coffee-script-source 1.8.0 => bundle update => restart
-161.ÔÚscssÖĞ£¬background: url()ÊÇÏà¶ÔÂ·¾¶ image-url()ÊÇ¾ø¶ÔÂ·¾¶ ¶¼ÊÇÏà¶ÔÓÚassets/imagesËµµÄ
-162.Ğ´BaseControllerµÄÊ±ºò£¬Èç¹ûadminÂ·¾¶ÏÂÃæÒ²ÓĞ¸öÏàÍ¬ÃûµÄBaseController,adminÏÂÃæµÄÀà¼Ì³ĞAdmin::BaseController¼Ì³ĞµÄÊÇÍâ²ãµÄBaseController,ËùÒÔ²»ÒªĞ´Í¬Ãû
-163.²»Í¨¹ıidÒ²¿ÉÒÔ×öbelongs_to
-	belongs_to :purpose, foreign_key: :purpose_code, primary_key: :code, class_name: 'Purpose' # class_name ÒªÕæclass£¬Çø·Ö´óĞ¡Ğ´
-164.Èç¹ûÏëÔÚmodelÀïÃæËæÊ±µ÷ÓÃcurrent_user
-	
-	»¹ĞèÒªÔÚconfig/application.rb ÖĞrequireÒ»ÏÂlibÖĞµÄÕâ¸öÎÄ¼ş
+161.åœ¨scssä¸­ï¼Œbackground: url()æ˜¯ç›¸å¯¹è·¯å¾„ image-url()æ˜¯ç»å¯¹è·¯å¾„ éƒ½æ˜¯ç›¸å¯¹äºassets/imagesè¯´çš„
+162.å†™BaseControllerçš„æ—¶å€™ï¼Œå¦‚æœadminè·¯å¾„ä¸‹é¢ä¹Ÿæœ‰ä¸ªç›¸åŒåçš„BaseController,adminä¸‹é¢çš„ç±»ç»§æ‰¿Admin::BaseControllerç»§æ‰¿çš„æ˜¯å¤–å±‚çš„BaseController,æ‰€ä»¥ä¸è¦å†™åŒå
+163.ä¸é€šè¿‡idä¹Ÿå¯ä»¥åšbelongs_to
+	belongs_to :purpose, foreign_key: :purpose_code, primary_key: :code, class_name: 'Purpose' # class_name è¦çœŸclassï¼ŒåŒºåˆ†å¤§å°å†™
+164.å¦‚æœæƒ³åœ¨modelé‡Œé¢éšæ—¶è°ƒç”¨current_user
+
+	è¿˜éœ€è¦åœ¨config/application.rb ä¸­requireä¸€ä¸‹libä¸­çš„è¿™ä¸ªæ–‡ä»¶
 	module SessionAdmin
 
 	  def self.included(base)
@@ -604,10 +604,10 @@ http://blog.csdn.net/sunset108/article/details/48956101
 	  end
 
 	end
-	
-	ÁíÍâÔÚconfig/initializers/xx.rb 
+
+	å¦å¤–åœ¨config/initializers/xx.rb
 	ApplicationRecord.send :include, SessionAdmin
-	
+
 	Admin
 	def self.current
 		Thread.current[:admin]
@@ -616,59 +616,59 @@ http://blog.csdn.net/sunset108/article/details/48956101
 	  def self.current=(admin)
 		Thread.current[:admin] = admin
 	  end
-	
-165.Èç¹ûÏëÔÚmodelÀïÃæµ÷ÓÃhelper·½·¨µÄ»°
-	include/extend ActionView::Helpers ¿´ÊÇÀà·½·¨ÀïÃæµ÷ÓÃ»¹ÊÇÊµÀı·½·¨ÀïÃæµ÷ÓÃ
-	
-166.CSVÊÇÖ±½Ó±»°üº¬ÔÚrubyÀïÃæµÄ, ²»ĞèÒªgemfileÀïÃæÌí¼Ó
-	µ¼³öµÄÊ±ºòCSV.open(path, 'wb') do |csv| end, Éè¶¨µ¼³öÎÄ¼şµÄ±àÂë¿ÉÒÔÓÃCSV.open(path, 'wb:gb2312:utf-8'), ÕâÑù£¬±£´æµÄÎÄ¼ş¾ÍÊÇgb2312±àÂë£¬Ë­ÔÚÇ°Ãæ¾ÍÊÇË­
-	NKF.nkf("-sx -Lw -W -c", str) ¿ÉÒÔ½â¾öµ¼³öµÄ×Ö·û´®±àÂëÎÊÌâ
-	
-167.·¢ËÍÓÊ¼ş Ğ´ÔÚapp/mailersÀïÃæ
-	·¢ËÍµÄ·½·¨ÊÇModel.method().deliver
-			default from: MAIL_FROM # ÒªÉèÖÃfrom²ÅÄÜ·¢ËÍ³öÈ¥
+
+165.å¦‚æœæƒ³åœ¨modelé‡Œé¢è°ƒç”¨helperæ–¹æ³•çš„è¯
+	include/extend ActionView::Helpers çœ‹æ˜¯ç±»æ–¹æ³•é‡Œé¢è°ƒç”¨è¿˜æ˜¯å®ä¾‹æ–¹æ³•é‡Œé¢è°ƒç”¨
+
+166.CSVæ˜¯ç›´æ¥è¢«åŒ…å«åœ¨rubyé‡Œé¢çš„, ä¸éœ€è¦gemfileé‡Œé¢æ·»åŠ 
+	å¯¼å‡ºçš„æ—¶å€™CSV.open(path, 'wb') do |csv| end, è®¾å®šå¯¼å‡ºæ–‡ä»¶çš„ç¼–ç å¯ä»¥ç”¨CSV.open(path, 'wb:gb2312:utf-8'), è¿™æ ·ï¼Œä¿å­˜çš„æ–‡ä»¶å°±æ˜¯gb2312ç¼–ç ï¼Œè°åœ¨å‰é¢å°±æ˜¯è°
+	NKF.nkf("-sx -Lw -W -c", str) å¯ä»¥è§£å†³å¯¼å‡ºçš„å­—ç¬¦ä¸²ç¼–ç é—®é¢˜
+
+167.å‘é€é‚®ä»¶ å†™åœ¨app/mailersé‡Œé¢
+	å‘é€çš„æ–¹æ³•æ˜¯Model.method().deliver
+			default from: MAIL_FROM # è¦è®¾ç½®fromæ‰èƒ½å‘é€å‡ºå»
 			mail(to: 'address'/['address', 'address'], subject: 'title', body: '')
-			Ïë·¢ËÍ¸½¼şĞèÒªĞ´·½·¨attachments['file_name'] = File.read(file_path[, encoding: 'sjis'])  #ÆäÖĞµÄfilename´øÀ©Õ¹Ãû£¬ºÍÊµ¼Ê¶Áµ½µÄÎÄ¼şÓĞÁ·Ï°£¬(invalid byte sequence in UTF-8 (ArgumentError))
+			æƒ³å‘é€é™„ä»¶éœ€è¦å†™æ–¹æ³•attachments['file_name'] = File.read(file_path[, encoding: 'sjis'])  #å…¶ä¸­çš„filenameå¸¦æ‰©å±•åï¼Œå’Œå®é™…è¯»åˆ°çš„æ–‡ä»¶æœ‰ç»ƒä¹ ï¼Œ(invalid byte sequence in UTF-8 (ArgumentError))
 169.Completed 200 OK in 3620ms (Views: 3596.5ms | ActiveRecord: 8.0ms)
-	Èç¹ûviewsµÄÊ±¼äºÍcompletedµÄÊ±¼äÏà²î´óµÄ»°¿ÉÒÔ¿¼ÂÇÊÖ¶¯Ìí¼ÓÒ»¸örender
-	ÔÚanaµÄmon_calendarÀïÃæ·¢ÏÖÁËÕâ¸öÎÊÌâ£¬´úÂë×îºóÊÖ¶¯Ìí¼Órender 'mon_calendar/new'£¬¶ø²»ÊÇÈÃËü×Ô¶¯È¥renderÄ£°å¿ÉÒÔ¸ü¿ìÒ»µã
-	ÁíÍâÊÇÍ¨¹ıajax·ÃÎÊ²úÉúµÄÕâ¸öÎÊÌâ
-	
+	å¦‚æœviewsçš„æ—¶é—´å’Œcompletedçš„æ—¶é—´ç›¸å·®å¤§çš„è¯å¯ä»¥è€ƒè™‘æ‰‹åŠ¨æ·»åŠ ä¸€ä¸ªrender
+	åœ¨anaçš„mon_calendaré‡Œé¢å‘ç°äº†è¿™ä¸ªé—®é¢˜ï¼Œä»£ç æœ€åæ‰‹åŠ¨æ·»åŠ render 'mon_calendar/new'ï¼Œè€Œä¸æ˜¯è®©å®ƒè‡ªåŠ¨å»renderæ¨¡æ¿å¯ä»¥æ›´å¿«ä¸€ç‚¹
+	å¦å¤–æ˜¯é€šè¿‡ajaxè®¿é—®äº§ç”Ÿçš„è¿™ä¸ªé—®é¢˜
+
 170.models.group_by(|model| model.id) models.group_by(&:id)
 
-171.jqÖĞµÄclosest('div')£¬¿ÉÄÜÆ¥ÅäµÃµ½×Ô¼ºµÄ
+171.jqä¸­çš„closest('div')ï¼Œå¯èƒ½åŒ¹é…å¾—åˆ°è‡ªå·±çš„
 
 172.obj.xxx(&:yyy) == obj.xxx {|o| o.yyy}
 
-173.setTimeout ¿ÉÒÔ½â¾ö·½·¨Ö´ĞĞË³ĞòµÄÎÊÌâ£¬ setTimeout(function, 0), ÓĞÊ±ºòÉèÖÃÊ±¼ä´óÒ»µã²ÅÓĞĞ§¹û setTimeout(function, 20)
+173.setTimeout å¯ä»¥è§£å†³æ–¹æ³•æ‰§è¡Œé¡ºåºçš„é—®é¢˜ï¼Œ setTimeout(function, 0), æœ‰æ—¶å€™è®¾ç½®æ—¶é—´å¤§ä¸€ç‚¹æ‰æœ‰æ•ˆæœ setTimeout(function, 20)
 
-174.simple_form_for ¿ÉÒÔÖ±½Ó·Å×Ö·û´®£¬Èç¹ûÃ»ÓĞÒª»ØÏÔµÄÊı¾İ»òÕßÊÇfor @modelsµÄ»°
-	Èç simple_form_for 'base_local_product' do |f|
+174.simple_form_for å¯ä»¥ç›´æ¥æ”¾å­—ç¬¦ä¸²ï¼Œå¦‚æœæ²¡æœ‰è¦å›æ˜¾çš„æ•°æ®æˆ–è€…æ˜¯for @modelsçš„è¯
+	å¦‚ simple_form_for 'base_local_product' do |f|
 			@products.each do |product|
 				f.simple_fields_for product do |ff|
 					<%= ff.input %>
-					=> »áÉú³É base_local_product[product_id][:product_attr], Ò²¿ÉÒÔ×Ô¼ºÖ¸¶¨name
+					=> ä¼šç”Ÿæˆ base_local_product[product_id][:product_attr], ä¹Ÿå¯ä»¥è‡ªå·±æŒ‡å®šname
 				end
 			end
 	   end
-	   
-175.ÏÂÔØµÄcsvÎÄ¼şÈç¹ûÍ·Á½¸öÊÇ´óĞ´×ÖÄ¸
-	Excel ÒÑ¾­¼ì²âµ½"xxx.xsl"ÊÇSYLKÎÄ¼ş,µ«ÊÇ²»ÄÜ½«Æä¼ÓÔØ½â¾ö·½·¨
+
+175.ä¸‹è½½çš„csvæ–‡ä»¶å¦‚æœå¤´ä¸¤ä¸ªæ˜¯å¤§å†™å­—æ¯
+	Excel å·²ç»æ£€æµ‹åˆ°"xxx.xsl"æ˜¯SYLKæ–‡ä»¶,ä½†æ˜¯ä¸èƒ½å°†å…¶åŠ è½½è§£å†³æ–¹æ³•
 	http://blog.csdn.net/dujiajiyu/article/details/34087757
-176.¹ØÓÚgemÖĞµÄ°æ±¾Ö¸¶¨
-	~>  ºÍ  >=
-	~>ÕâÖÖ±íÊ¾½üËÆ´óÓÚ
-	>=ÕâÖÖ¾ÍÊÇ´óÓÚµÈÓÚ
-	ÕâÒâÎ¶×Å¡°µÈÓÚ»ò´óÓÚ×îºóÒ»Î»Êı×Ö¡±£¬Òò´ËÀıÈç~> 2.3ÒâÎ¶×Å¡°µÈÓÚ2.3»ò´óÓÚ2.3£¬µ«Ğ¡ÓÚ3.0¡±£¬¶ø~> 2.3.0ÒâÎ¶×Å¡°µÈÓÚ2.3.0»ò´óÓÚ2.3.0£¬µ«Ğ¡ÓÚ±È2.4.0¡°¡£
+176.å…³äºgemä¸­çš„ç‰ˆæœ¬æŒ‡å®š
+	~>  å’Œ  >=
+	~>è¿™ç§è¡¨ç¤ºè¿‘ä¼¼å¤§äº
+	>=è¿™ç§å°±æ˜¯å¤§äºç­‰äº
+	è¿™æ„å‘³ç€â€œç­‰äºæˆ–å¤§äºæœ€åä¸€ä½æ•°å­—â€ï¼Œå› æ­¤ä¾‹å¦‚~> 2.3æ„å‘³ç€â€œç­‰äº2.3æˆ–å¤§äº2.3ï¼Œä½†å°äº3.0â€ï¼Œè€Œ~> 2.3.0æ„å‘³ç€â€œç­‰äº2.3.0æˆ–å¤§äº2.3.0ï¼Œä½†å°äºæ¯”2.4.0â€œã€‚
 
-	¿ÉÒÔ½«ÆäÀí½âÎª¡°½üËÆ´óÓÚ¡±¡£
-177.libÖĞµÄ.rbÎÄ¼şÔÚapplication.rbÀïrequire¾Í¿ÉÒÔÓÃÁË£¬ÒªĞ´ÔÚ×îºóÃæ
+	å¯ä»¥å°†å…¶ç†è§£ä¸ºâ€œè¿‘ä¼¼å¤§äºâ€ã€‚
+177.libä¸­çš„.rbæ–‡ä»¶åœ¨application.rbé‡Œrequireå°±å¯ä»¥ç”¨äº†ï¼Œè¦å†™åœ¨æœ€åé¢
 
-178.Ê¹ÓÃurl_encode¿ÉÒÔ½â¾ö´«ÊäµÄÎÄ¼şÃûÂÒÂëµÄÎÊÌâ
-	µ«ĞèÒªrequire½øÀ´
+178.ä½¿ç”¨url_encodeå¯ä»¥è§£å†³ä¼ è¾“çš„æ–‡ä»¶åä¹±ç çš„é—®é¢˜
+	ä½†éœ€è¦requireè¿›æ¥
 	require 'erb'
 	include ERB::Util
-	
+
 	def encode_file_name file_name
 		return if file_name.blank?
 		# return url_encode(file_name) if Settings[:filename_force_url_encode]
@@ -686,78 +686,89 @@ http://blog.csdn.net/sunset108/article/details/48956101
 			url_encode(file_name)
 		end
 	  end
-	  ¿ÉÒÔ°´ä¯ÀÀÆ÷À´
-179.iCheckÖĞ£¬Èç¹û×î¿ªÊ¼Ïà¹ØµÄradioºÍcheckbox¾ÍÊÇdisabledµÄ»°£¬×îºóÉú³ÉµÄiCheckÑÕÉ«¾ÍºÜµ­
-	Èç¹ûÔÚÉú³ÉÍêºóÔÙdisabled¾Í²»»áÁË
-180.¶ÔÓÚ¼ÙÉ¾³ı£¬Èç¹ûÒ»¸öÖµ½¨Á¢ÁËÎ¨Ò»Ë÷Òı£¬±»¼ÙÉ¾³ıÁËÒ²²»ÄÜ½¨Á¢ÏàÍ¬µÄÊı¾İ£¬ÇĞ¼Ç
-181.¶ÔÓÚdevise£¬Èç¹ûÔÚÒ³ÃæÉÏ³É¹¦ĞŞ¸ÄÁËÃÜÂë£¬Ö»ÒªredirectÒ»ÏÂ¾Í»áÌø×ªµ½µÇÂ¼Ò³Ãæ
-182.Èç¹ûÖ»ÏëÒªÑéÖ¤Ä³Ò»²¿·ÖµÄ×Ö¶Î£¬¿ÉÒÔvalid?£¬È»ºóÅĞ¶ÏerrorsÖĞÓĞÃ»ÓĞÖ¸¶¨µÄÄÇĞ©×Ö¶ÎµÄkey¾Í¿ÉÒÔÁË
-183.¶ÔÓÚchorme×Ô¶¯²¹È«ÓÃ»§ÃûÃÜÂë£¬Èç¹û²»ÏëÒª£¬¿ÉÒÔÉèÖÃ
+	  å¯ä»¥æŒ‰æµè§ˆå™¨æ¥
+179.iCheckä¸­ï¼Œå¦‚æœæœ€å¼€å§‹ç›¸å…³çš„radioå’Œcheckboxå°±æ˜¯disabledçš„è¯ï¼Œæœ€åç”Ÿæˆçš„iChecké¢œè‰²å°±å¾ˆæ·¡
+	å¦‚æœåœ¨ç”Ÿæˆå®Œåå†disabledå°±ä¸ä¼šäº†
+180.å¯¹äºå‡åˆ é™¤ï¼Œå¦‚æœä¸€ä¸ªå€¼å»ºç«‹äº†å”¯ä¸€ç´¢å¼•ï¼Œè¢«å‡åˆ é™¤äº†ä¹Ÿä¸èƒ½å»ºç«‹ç›¸åŒçš„æ•°æ®ï¼Œåˆ‡è®°
+181.å¯¹äºdeviseï¼Œå¦‚æœåœ¨é¡µé¢ä¸ŠæˆåŠŸä¿®æ”¹äº†å¯†ç ï¼Œåªè¦redirectä¸€ä¸‹å°±ä¼šè·³è½¬åˆ°ç™»å½•é¡µé¢
+182.å¦‚æœåªæƒ³è¦éªŒè¯æŸä¸€éƒ¨åˆ†çš„å­—æ®µï¼Œå¯ä»¥valid?ï¼Œç„¶ååˆ¤æ–­errorsä¸­æœ‰æ²¡æœ‰æŒ‡å®šçš„é‚£äº›å­—æ®µçš„keyå°±å¯ä»¥äº†
+183.å¯¹äºchormeè‡ªåŠ¨è¡¥å…¨ç”¨æˆ·åå¯†ç ï¼Œå¦‚æœä¸æƒ³è¦ï¼Œå¯ä»¥è®¾ç½®
 	<input type="text" name="username" autocomplete="off/nope" />
 	<input type="password" name="password" autocomplete="new-password" />
-	ÕâÑù¾Í²»»á×Ô¶¯Ìî³äÓÃ»§ÃûºÍÃÜÂëÁË
+	è¿™æ ·å°±ä¸ä¼šè‡ªåŠ¨å¡«å……ç”¨æˆ·åå’Œå¯†ç äº†
 	https://gist.github.com/runspired/b9fdf1fa74fc9fb4554418dea35718fe
-184. ¿çÓò The 'Access-Control-Allow-Origin' header contains multiple values '*, *', but only one is allowed
+184. è·¨åŸŸ The 'Access-Control-Allow-Origin' header contains multiple values '*, *', but only one is allowed
 	response.headers['Access-Control-Allow-Origin'] = '*'
-185.Èç¹ûÔÚÒÆ¶¯Éè±¸µÄshadowboxÖĞÃ»ÓĞscrollbarµÄ»°
+185.å¦‚æœåœ¨ç§»åŠ¨è®¾å¤‡çš„shadowboxä¸­æ²¡æœ‰scrollbarçš„è¯
 	$('#sb-body-inner').css({
-						'overflow': 'scroll', 
-						'-webkit-overflow-scrolling': 'touch' 
+						'overflow': 'scroll',
+						'-webkit-overflow-scrolling': 'touch'
 					});
 	}
-186.ÔÚrubymineµÄedit configurationÖĞÖ¸¶¨ip³É×Ô¼ºµÄip£¬±ğÈË¾Í¿ÉÒÔ·ÃÎÊÄãµÄÏîÄ¿ÁË
-187.$(form).serialize() ¿ÉÒÔ»ñÈ¡Õâ¸öformµÄËùÓĞ²ÎÊı
-188.devkitĞèÒª°²×°ÔÚrubyÖĞ cmd½øruby/devkit ruby dk.rb init => ĞŞ¸Ä config.yml ruby¸ùÄ¿Â¼ => ruby dk.rb install 
-189.¶àÌ¬£ºÍ¬Ò»²Ù×÷×÷ÓÃÓÚ²»Í¬µÄ¶ÔÏó¿ÉÒÔÓĞ²»Í¬µÄ½âÊÍ²úÉú²»Í¬µÄÖ´ĞĞ½á¹û£¬ĞèÒª¼Ì³Ğ(java»¹ÓĞ½Ó¿Ú)
-	¼Ì³ĞÖ÷ÒªÊÇÎªÁËÖØÓÃ´úÂë£¬½ÚÊ¡¿ª·¢Ê±¼ä£¬Ò²¿ÉÊµÏÖ¼Ì³Ğ¶àÌ¬£¬Í¨¹ıÖØĞ´·½·¨
-	·â×°ÊÇÓÃÀ´ÕûºÏÒ»¸ö¶ÔÏóµÄÊôĞÔºÍ·½·¨£¬Òş²ØÄÚ²¿µÄÊµÏÖÏ¸½ÚÖ»Í¨¹ı¶ÔÍâ¿ª·ÅÒ»Ğ©·½·¨Í¬Íâ²¿½øĞĞ½»»¥
-	
-	Îå´ó»ù±¾Ô­Ôò: µ¥Ò»Ö°ÄÜÔ­Ôò£¬¿ª·Å·â±ÕÔ­Ôò(¹¦ÄÜ¿ÉÀ©Õ¹£¬µ«¾¡Á¿²»ĞŞ¸ÄÔ­À´µÄ³ÌĞò£¬¶øÊÇ¼Ì³ĞÈ¥ÍØÕ¹), Ìæ»»Ô­Ôò:×ÓÀà¿ÉÒÔÌæ»»»ùÀà¸¸Àà²»¿ÉÒÔÌæ»»×ÓÀà(¼Ì³ĞµÄ»úÖÆ£¬×ÓÀà¿ÉÄÜ»áÓĞ±È¸¸Àà¸ü¶àµÄ·½·¨ºÍÊôĞÔ),ÒÀÀµµ¹ÖÃÔ­Ôò,½Ó¿Ú¸ôÀëÔ­Ôò(½Ó¿ÚµÄ¹¦ÄÜ¾¡Á¿µ¥Ò»)
-190.¼ÙÉ¾³ı
+186.åœ¨rubymineçš„edit configurationä¸­æŒ‡å®šipæˆè‡ªå·±çš„ipï¼Œåˆ«äººå°±å¯ä»¥è®¿é—®ä½ çš„é¡¹ç›®äº†
+187.$(form).serialize() å¯ä»¥è·å–è¿™ä¸ªformçš„æ‰€æœ‰å‚æ•°
+188.devkitéœ€è¦å®‰è£…åœ¨rubyä¸­ cmdè¿›ruby/devkit ruby dk.rb init => ä¿®æ”¹ config.yml rubyæ ¹ç›®å½• => ruby dk.rb install
+189.å¤šæ€ï¼šåŒä¸€æ“ä½œä½œç”¨äºä¸åŒçš„å¯¹è±¡å¯ä»¥æœ‰ä¸åŒçš„è§£é‡Šäº§ç”Ÿä¸åŒçš„æ‰§è¡Œç»“æœï¼Œéœ€è¦ç»§æ‰¿(javaè¿˜æœ‰æ¥å£)
+	ç»§æ‰¿ä¸»è¦æ˜¯ä¸ºäº†é‡ç”¨ä»£ç ï¼ŒèŠ‚çœå¼€å‘æ—¶é—´ï¼Œä¹Ÿå¯å®ç°ç»§æ‰¿å¤šæ€ï¼Œé€šè¿‡é‡å†™æ–¹æ³•
+	å°è£…æ˜¯ç”¨æ¥æ•´åˆä¸€ä¸ªå¯¹è±¡çš„å±æ€§å’Œæ–¹æ³•ï¼Œéšè—å†…éƒ¨çš„å®ç°ç»†èŠ‚åªé€šè¿‡å¯¹å¤–å¼€æ”¾ä¸€äº›æ–¹æ³•åŒå¤–éƒ¨è¿›è¡Œäº¤äº’
+
+	äº”å¤§åŸºæœ¬åŸåˆ™: å•ä¸€èŒèƒ½åŸåˆ™ï¼Œå¼€æ”¾å°é—­åŸåˆ™(åŠŸèƒ½å¯æ‰©å±•ï¼Œä½†å°½é‡ä¸ä¿®æ”¹åŸæ¥çš„ç¨‹åºï¼Œè€Œæ˜¯ç»§æ‰¿å»æ‹“å±•), æ›¿æ¢åŸåˆ™:å­ç±»å¯ä»¥æ›¿æ¢åŸºç±»çˆ¶ç±»ä¸å¯ä»¥æ›¿æ¢å­ç±»(ç»§æ‰¿çš„æœºåˆ¶ï¼Œå­ç±»å¯èƒ½ä¼šæœ‰æ¯”çˆ¶ç±»æ›´å¤šçš„æ–¹æ³•å’Œå±æ€§),ä¾èµ–å€’ç½®åŸåˆ™,æ¥å£éš”ç¦»åŸåˆ™(æ¥å£çš„åŠŸèƒ½å°½é‡å•ä¸€)
+190.å‡åˆ é™¤
 	paranoid, '~> 2.2'
 	acts_as_paranoid column: :deleted, sentinel_value: false
-191.±éÀúcsv
+191.éå†csv
 	CSV.read(path, encoding: '').each
-	CSV.foreach(path, encoding(xx:xx)) do 
-	CSV.open(path, 'ab/a+')¿ÉÒÔÏòÆäÖĞÌí¼ÓĞĞ
-192.aliasºÍalias_methodµÄÇø±ğ
-	alias :method1/method1/(²»ÄÜÊÇ×Ö·û´®) :method2 <=> alias_method :method1/'method1', :method2
-193.ÈÃrailsÄ¬ÈÏ¼ÓÔØlibÏÂµÄÎÄ¼ş
+	CSV.foreach(path, encoding(xx:xx)) do
+	CSV.open(path, 'ab/a+')å¯ä»¥å‘å…¶ä¸­æ·»åŠ è¡Œ
+192.aliaså’Œalias_methodçš„åŒºåˆ«
+	alias :method1/method1/(ä¸èƒ½æ˜¯å­—ç¬¦ä¸²) :method2 <=> alias_method :method1/'method1', :method2
+193.è®©railsé»˜è®¤åŠ è½½libä¸‹çš„æ–‡ä»¶
 	https://www.jianshu.com/p/e4446432e9cb
-	ÔÚconfig/application.rb
-	config.autoload_paths << Rails.root.join('lib') # ¿ª·¢Ä£Ê½¿ÉÒÔÓÃ, ²úÖĞ»·¾³²»ÔÊĞí
-	cofig.eager_load_paths << [²úÆ·Ä£Ê½ÓÃÕâ¸ö]
+	åœ¨config/application.rb
+	config.autoload_paths << Rails.root.join('lib') # å¼€å‘æ¨¡å¼å¯ä»¥ç”¨, äº§ä¸­ç¯å¢ƒä¸å…è®¸
+	cofig.eager_load_paths << [äº§å“æ¨¡å¼ç”¨è¿™ä¸ª]
 194.function(*args)
-	argsÊÇÒ»¸öÊı×é£¬*args¾ÍÊÇ¶à¸ö²ÎÊıÁË
+	argsæ˜¯ä¸€ä¸ªæ•°ç»„ï¼Œ*argså°±æ˜¯å¤šä¸ªå‚æ•°äº†
 	def function(a = [], b)
 	function(1) => a: [], b: 1
-195.Èç¹ûÒ»¸öÀàÏë¹ØÁªÁ½¸ö²»Í¬ÀàĞÍµÄÍ¼Æ¬£¬ÏñecÖĞµÄpictureºÍicon
+195.å¦‚æœä¸€ä¸ªç±»æƒ³å…³è”ä¸¤ä¸ªä¸åŒç±»å‹çš„å›¾ç‰‡ï¼Œåƒecä¸­çš„pictureå’Œicon
 	has_one :category_icon, ->(o) { unscope(where: :owner_type).where(owner_type: 'CategoryIcon') }, dependent: :destroy, as: :owner
-	ÕâÑù¿ÉÒÔÔÚ²éÑ¯µÄÊ±ºò£¬ÏŞÖÆÆä owner_type
-	newµÄÊ±ºò£¬picture.owner = category	#(Õâ¸ö»áÖ±½Ó¸³ÖµidºÍtype, typeºÍ polymorphicÓĞ¹Ø£¬¶àÌ¬)
-		ÕâÊ±ºò¿ÉÒÔÔÙÊÖ¶¯ĞŞ¸Äowner_type
+	è¿™æ ·å¯ä»¥åœ¨æŸ¥è¯¢çš„æ—¶å€™ï¼Œé™åˆ¶å…¶ owner_type
+	newçš„æ—¶å€™ï¼Œpicture.owner = category	#(è¿™ä¸ªä¼šç›´æ¥èµ‹å€¼idå’Œtype, typeå’Œ polymorphicæœ‰å…³ï¼Œå¤šæ€)
+		è¿™æ—¶å€™å¯ä»¥å†æ‰‹åŠ¨ä¿®æ”¹owner_type
 	https://stackoverflow.com/questions/10083667/ruby-on-rails-has-many-define-class-name-for-polymorphic-relationship
-196.¿ÉÒÔÉèÖÃrailsµÄÄ¬ÈÏÊ±¼ä
+196.å¯ä»¥è®¾ç½®railsçš„é»˜è®¤æ—¶é—´
 	# Date
-	Date::DATE_FORMATS[:default] = "%d/%m/%Y" 
+	Date::DATE_FORMATS[:default] = "%d/%m/%Y"
 
 	# Time
-	Time::DATE_FORMATS[:default] = "%d/%m/%Y %H:%M" 
+	Time::DATE_FORMATS[:default] = "%d/%m/%Y %H:%M"
 	to config/initializers/date_time.rb
-197.·ÃÎÊĞéÄâ»úÉÏµÄÍøÒ³Ê±£¬×ÊÔ´ÎÄ¼şµÄÔ´µØÖ·¶¼±ä³ÉÁËlocalhost:3000£¬µ¼ÖÂ¶¼·ÃÎÊ²»µ½
-	ĞèÒªĞŞ¸Äapplication.ymlÖĞµÄcdnÎª''£¬Èç¹ûÉèÖÃÁË»áÄ¬ÈÏ´ÓÕâÀïÈ¥·ÃÎÊµÄ£¬ÅäÖÃÕâ¸öµÄºÃ´¦ÊÇ£¬°Ñ×ÊÔ´·Åµ½ÔÆÉÏ£¬
-	·şÎñÆ÷¾Í²»ĞèÒªÌ«´óµÄ´ø¿íÁË
-198.360ä¯ÀÀÆ÷ ÔÚÊ¹ÓÃFontAwesomeÊ±¿ÉÄÜ»á³öÏÖµÄbug
-	ÈİÆ÷ÄÚÊ¹ÓÃFontAwesomeµÄi±êÇ©¿ÉÄÜÊÜÈ«¾Ö×ÖÌåÓ°Ïì£¬i±êÇ©µÄ¸ß¶ÈÕı³££¬µ«ÈİÆ÷ÏÔÊ¾µÄÈİÆ÷ÄÚÈİ¸ß¶ÈÒª±Èi±êÇ©Òª¸ß£¬ÕâÊ±¿ÉÒÔ°Ñ´°¿ÚµÄ×ÖÌåÉèÖÃÎª¿Õ
+197.è®¿é—®è™šæ‹Ÿæœºä¸Šçš„ç½‘é¡µæ—¶ï¼Œèµ„æºæ–‡ä»¶çš„æºåœ°å€éƒ½å˜æˆäº†localhost:3000ï¼Œå¯¼è‡´éƒ½è®¿é—®ä¸åˆ°
+	éœ€è¦ä¿®æ”¹application.ymlä¸­çš„cdnä¸º''ï¼Œå¦‚æœè®¾ç½®äº†ä¼šé»˜è®¤ä»è¿™é‡Œå»è®¿é—®çš„ï¼Œé…ç½®è¿™ä¸ªçš„å¥½å¤„æ˜¯ï¼ŒæŠŠèµ„æºæ”¾åˆ°äº‘ä¸Šï¼Œ
+	æœåŠ¡å™¨å°±ä¸éœ€è¦å¤ªå¤§çš„å¸¦å®½äº†
+198.360æµè§ˆå™¨ åœ¨ä½¿ç”¨FontAwesomeæ—¶å¯èƒ½ä¼šå‡ºç°çš„bug
+	å®¹å™¨å†…ä½¿ç”¨FontAwesomeçš„iæ ‡ç­¾å¯èƒ½å—å…¨å±€å­—ä½“å½±å“ï¼Œiæ ‡ç­¾çš„é«˜åº¦æ­£å¸¸ï¼Œä½†å®¹å™¨æ˜¾ç¤ºçš„å®¹å™¨å†…å®¹é«˜åº¦è¦æ¯”iæ ‡ç­¾è¦é«˜ï¼Œè¿™æ—¶å¯ä»¥æŠŠçª—å£çš„å­—ä½“è®¾ç½®ä¸ºç©º
 199.https://github.com/80percent/rails-template/wiki/how-to-deploy-rails-to-ubuntu1404-with-rails-template
-	ubuntuÏÂÔØrails
-	ÇĞ»»ruby °æ±¾
+	ubuntuä¸‹è½½rails
+	åˆ‡æ¢ruby ç‰ˆæœ¬
 	rbenv local v
 200. block = ->(a, b){body}    block = &->(a, b){body}    &block = &->(a, b){body}
 201.
-	Time.now => ·şÎñÆ÷µ±Ç°Ê±¼ä
-	Time.zone.now => Éè¶¨µÄÊ±ÇøµÄµ±Ç°Ê±¼ä # config/application.rb => config.time_zone = "BeiJing"
-	
-202.ubuntu²é¿´±¾»ú¹«Ô¿£¬cat ~/.ssh/xx.pub
-	Á¬½Ó²úÆ·»·¾³console: mina production console
-	mina log²é¿´devµÄlog/mina ssh
+	Time.now => æœåŠ¡å™¨å½“å‰æ—¶é—´
+	Time.zone.now => è®¾å®šçš„æ—¶åŒºçš„å½“å‰æ—¶é—´ # config/application.rb => config.time_zone = "BeiJing"
+
+202.ubuntuæŸ¥çœ‹æœ¬æœºå…¬é’¥ï¼Œcat ~/.ssh/xx.pub
+	è¿æ¥äº§å“ç¯å¢ƒconsole: mina production console
+	mina logæŸ¥çœ‹devçš„log/mina ssh
+		sshä¸­ top å¯ä»¥æŸ¥çœ‹å½“å‰ç¯å¢ƒçš„å†…å­˜cpuä½¿ç”¨   free
+		mina puma:hard_restart å¯ä»¥é‡å¯æœåŠ¡å™¨
+       ssh root@develop.iballu.cn
+       æœ‰rootä¹‹åå¯ä»¥å®‰è£…å·¥å…· atop(æ¯”topæ›´åŠ è¯¦ç»†) iotop(ioç›‘æ§)
+203.å¯¹äºé¡µé¢ä¸­çš„checkboxè¡¨å•ï¼Œå¦‚æœæ²¡æœ‰checkï¼Œåˆ™ä¸ä¼šæœ‰å€¼ä¸Šä¼ 
+    åŒåçš„è¡¨å•åé¢ä¼šè¦†ç›–å‰é¢çš„ï¼Œnameä¸ºæ•°ç»„çš„ä¸ä¼šè¦†ç›–ï¼Œè€Œæ˜¯å åŠ 
+    check_boxä¼šæ”¾ä¸¤ä¸ªè¡¨å•ï¼Œå¦‚æœä¸€ä¸ªhidden, ä¸€ä¸ªcheckboxï¼Œä¸¤ä¸ªnameç›¸åŒï¼Œå€¼ä¸åŒï¼Œå¦‚æœcheckäº†å°±ä»¥checkçš„å€¼ä¸ºå‡†ï¼Œæ²¡æœ‰checkå°±ä»¥hiddenä¸ºå‡†ï¼Œä¸ä¼šæ²¡æœ‰å€¼ä¸Šä¼ ï¼Œcheck_box_tagåˆ™åªä¼šæœ‰ä¸€ä¸ªå€¼ä¸Šä¼ äº†
+
+204.htmlæ ‡ç­¾çš„tabindex ä¼šå½±å“é¡µé¢æ˜¾ç¤ºæœ€ä¸Šæ–¹æ˜¾ç¤ºçš„ä½ç½®
+
+205.è®©å›ºå®šå®½å›¾ç‰‡åœ¨ç™¾åˆ†æ¯”çª—å£å†…æ°´å¹³å±…ä¸­ï¼šleft: 50%, margin-left: 50% * width
