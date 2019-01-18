@@ -772,3 +772,34 @@ http://blog.csdn.net/sunset108/article/details/48956101
 204.html标签的tabindex 会影响页面显示最上方显示的位置
 
 205.让固定宽图片在百分比窗口内水平居中：left: 50%, margin-left: 50% * width
+
+206.如果想让图片(高度固定)和文字(可能没图片高，也可能超过图片高，如果超过就顶部对齐)在容器内底部对齐的话，可以给图片设置float，图片和文字中间加一个0宽度元素，高度为图片的宽度，这样文字就会根据这个元素对齐了
+207.把子元素改成 display: inline-block，并加上 vertical-align: middle。只是可惜的是这样并不成原因是 vertical-align 指的是当前 inline 元素自己，与其它 inline 元素如何对齐。如果还是不能对齐，可以尝试把同层内其他inline也加上
+208.linux上装字体
+  https://github.com/adobe-fonts/source-han-sans/tree/release
+
+  wget https://github.com/fangwentong/dotfiles/raw/master/ubuntu-gui/fonts/Monaco.ttf
+  sudo mkdir -p /usr/share/fonts/custom
+  sudo mv Monaco.ttf /usr/share/fonts/custom
+  sudo chmod 744 /usr/share/fonts/custom/Monaco.ttf
+
+  sudo mkfontscale  #生成核心字体信息
+  sudo mkfontdir
+  sudo fc-cache -fv
+  http://blog.wentong.me/2014/05/add-fonts-to-your-linux/
+
+209.Scope with join on :has_many :through association
+  class User < ActiveRecord::Base
+    has_many :meeting_participations
+    has_many :meetings, :through => :meeting_participations do
+     def visible
+       where("meeting_participations.visible = ?", true)
+     end
+    end
+  end
+  @user.meetings.visible
+210.自定义滚动条
+  https://www.cnblogs.com/rubylouvre/archive/2011/03/01/1968057.html
+220.小程序中，当页面内容过高可以滑动时，会出现录音功能卡顿，mbox好像也会？可以用scroll-view
+221.在order()的排序中，需要嵌入一些变量，而使用”#{}”导致sql注入时，可以使用sanitize_sql_for_order([‘sql ? sql’, value])
+    https://stackoverflow.com/questions/29775500/rails-order-on-columns-values-priority-column
